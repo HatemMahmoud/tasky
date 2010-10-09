@@ -1,5 +1,6 @@
 Tasky::Application.routes.draw do
-  resources :users, :user_sessions
+  resources :pages, :only => :show
+  resources :users, :user_sessions 
   match 'logout' => 'user_sessions#destroy', :as => :logout 
   root :to => "users#index"
 

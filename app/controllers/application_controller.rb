@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  rescue_from ActionView::MissingTemplate, :with => :render_404
   
   before_filter :require_user
   helper_method :current_user
@@ -30,5 +31,9 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to session[:return_to] || default
     session[:return_to] = nil
+  end
+  
+  def render_404
+    render 'errors/404', :status => 404
   end
 end
