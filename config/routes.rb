@@ -1,8 +1,8 @@
 Tasky::Application.routes.draw do
   resources :pages, :only => :show
-  resources :users, :user_sessions 
+  resources :users, :user_sessions, :tasks 
   match 'logout' => 'user_sessions#destroy', :as => :logout 
-  root :to => "users#index"
+  root :to => "pages#show", :id => :home
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

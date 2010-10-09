@@ -9,14 +9,14 @@ class UserSessionsController < ApplicationController
     # existing user
     if self.current_user = User.find_by_identifier(new_user_data[:identifier])
       flash[:notice] = 'Welcome back!'
-      redirect_back_or_default root_path
+      redirect_back_or_default tasks_path
     else
       # new user
       new_user = User.new(new_user_data)
       if new_user.save
         self.current_user = new_user
         flash[:notice] = 'Thanks for signing up!'
-        redirect_back_or_default root_path
+        redirect_back_or_default tasks_path
       else
         # invalid user
         session[:new_user_data] = new_user_data

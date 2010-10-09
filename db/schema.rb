@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101007165049) do
+ActiveRecord::Schema.define(:version => 20101009085316) do
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "due_at"
+    t.boolean  "done",       :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "identifier"

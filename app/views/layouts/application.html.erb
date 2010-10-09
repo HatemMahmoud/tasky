@@ -10,14 +10,11 @@
   <h1><%= link_to 'Tasky', root_path %></h1>
   <ul>
     <% if current_user %>
-    <li>
-      Hi, <%= link_to h(current_user.name), edit_user_path(current_user) %> [ <%= link_to 'Logout', logout_path %> ]
-    </li>
+    <li>Hi, <%= link_to h(current_user.name), edit_user_path(current_user) %> [ <%= link_to 'Logout', logout_path %> ]</li>
     <% else %>
-    <li>
-      <%= RPXNow.popup_code('Login', 'tasky', user_sessions_url).html_safe %>
-    </li>
+    <li><%= RPXNow.popup_code('Login', 'tasky', user_sessions_url).html_safe %></li>
     <% end %>
+    <li><%= link_to 'Tasks', tasks_path %></li>
     <li><%= link_to 'Help', page_path('help') %></li>
     <li><%= link_to 'About', page_path('about') %></li>
   </ul>
