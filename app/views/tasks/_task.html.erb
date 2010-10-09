@@ -1,0 +1,5 @@
+<%= content_tag_for :li, task, :class => task.done? ? 'done' : '' do %>
+  <%= link_to_unless task.done, task.name, edit_task_path(task) %>
+  <span class="date"><%= task.due_at.strftime '%d %b %y' if task.due_at %></span>
+  <%= link_to image_tag('cross.png'), task, :confirm => 'Delete this task?', :method => :delete, :class => 'delete' %>
+<% end %>

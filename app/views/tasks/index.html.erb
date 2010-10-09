@@ -1,21 +1,13 @@
 <% @title = 'Tasks' %>
 <h2>Tasks</h2>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Due at</th>
-    <th>Done</th>
-    <th></th>
-    <th></th>
-  </tr>
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.due_at %></td>
-    <td><%= task.done %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+
 <%= link_to 'New Task', new_task_path %>
+
+<% %w[overdue today tomorrow later someday].each do |list_name| %>
+  <div id="<%= list_name %>">
+    <h3><%= list_name.capitalize %></h3>
+    <ul class="bulletless task_list">
+      <%= render eval("@#{list_name}") %>
+    </ul>
+  </div>
+<% end %>

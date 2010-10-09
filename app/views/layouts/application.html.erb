@@ -7,20 +7,37 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <h1><%= link_to 'Tasky', root_path %></h1>
-  <ul>
-    <% if current_user %>
-    <li>Hi, <%= link_to h(current_user.name), edit_user_path(current_user) %> [ <%= link_to 'Logout', logout_path %> ]</li>
-    <% else %>
-    <li><%= RPXNow.popup_code('Login', 'tasky', user_sessions_url).html_safe %></li>
-    <% end %>
-    <li><%= link_to 'Tasks', tasks_path %></li>
-    <li><%= link_to 'Help', page_path('help') %></li>
-    <li><%= link_to 'About', page_path('about') %></li>
-  </ul>
-  <%- flash.each do |name, message| -%>
-    <%= content_tag :div, message, :class => "#{name}" %>
-  <%- end -%>
-  <%= yield %>
+  <div id="wrapper">
+    <div id="header">
+      <h1><%= link_to 'Tasky', root_path %></h1>
+      <ul id="user_menu" class="bulletless inline">
+        <% if current_user %>
+          <li>Hi, <%= current_user.name %>!</li>
+          <li>[<%= link_to 'Profile', edit_user_path(current_user) %></li> |
+          <li><%= link_to 'Logout', logout_path %>]</li>
+        <% else %>
+          <li><%= RPXNow.popup_code('Login', 'tasky', user_sessions_url).html_safe %></li>
+        <% end %>
+      </ul>
+      <ul id="menu" class="bulletless inline">
+        <li><%= link_to 'Tasks', tasks_path %></li>
+        <li><%= link_to 'Help', page_path('help') %></li>
+      </ul>
+    </div>
+    <div id="content">
+      <%- flash.each do |name, message| -%>
+        <%= content_tag :p, message, :class => name %>
+      <%- end -%>
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <p>© <%= Time.now.strftime('%Y') %> <%= link_to 'Made in ExpressionLab', 'http://www.expressionlab.com', :target => '_blank' %></p>
+      <ul class="bulletless inline">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'About', page_path('about') %></li>
+        <li><%= link_to 'Contact', page_path('contact') %></li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

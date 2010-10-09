@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to root_path, :notice => 'User was successfully updated.'
+      redirect_to tasks_path, :notice => 'Profile was successfully updated.'
     end
   end
 
