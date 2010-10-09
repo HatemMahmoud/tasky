@@ -1,4 +1,8 @@
 Tasky::Application.routes.draw do
+  resources :users, :user_sessions
+  match 'logout' => 'user_sessions#destroy', :as => :logout 
+  root :to => "users#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
