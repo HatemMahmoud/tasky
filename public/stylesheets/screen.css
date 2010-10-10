@@ -23,7 +23,10 @@ h2 {
 }
 
 h3 {
-    font-size: 14px;
+    border-bottom:1px solid #CCCCCC;
+    font-size:14px;
+    margin:10px 0 0;
+    padding:10px 0;
 }
 
 p{
@@ -53,6 +56,12 @@ p{
 #menu {
   float: right;
 }
+#tasks_menu{
+  text-align: right;
+  border-bottom:1px solid #CCCCCC;
+  padding:10px 0;
+  text-align:right;
+}
 
 #footer {
     font-size: 10px;
@@ -63,68 +72,38 @@ table {
     width: 100%;
 }
 
-#overdue, #overdue a{
+#overdue{
   color:#CC0000;
 }
-
-#overdue li a:hover{
-  background-color:#CC0000;
-  color:#FFFFFF;
-}
-
-#today, #today a{
+#today{
   color:#57861A;
 }
-
-#today a:hover{
-  background-color:#57861A;
-  color:#FFFFFF;
-}
-
-#tomorrow, #tomorrow a{
+#tomorrow{
   color:#333;
 }
-
-#tomorrow a:hover{
-  background-color:#333;
-  color:#FFFFFF;
-}
-
-#later, #later a{
+#later{
   color:#666;
 }
-
-#later a:hover{
-  background-color:#666;
-  color:#FFFFFF;
-}
-
-#someday, #someday a{
+#someday{
   color:#999;
 }
-
-#someday a:hover{
-  background-color:#999;
-  color:#FFFFFF;
-}
-
 .task{  
   border-bottom: 1px solid #EEEEEE;
   padding:5px 0;
 }
-
 .date {
   font-size: 10px;
   color: #999;
 }
-
-#overdue .done, #overdue .done a {
+.no_tasks {
+  color: #999;
+}
+.done {
   text-decoration: line-through;
   color: #999;
 }
 
-.delete{
-  /*background: url(/images/cross.png);*/
+.edit, .delete{
   float: right;
 }
 
@@ -161,16 +140,17 @@ ul.bulletless {
 }
 
 ul.task_list{
+  margin: 0 0 10px;
   padding: 0;
 }
 
 ul.inline {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ul.inline li {
-    display: inline;
+  display: inline;
 }
 
 /***** Forms *****/

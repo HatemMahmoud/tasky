@@ -1,13 +1,16 @@
 <% @title = 'Tasks' %>
-<h2>Tasks</h2>
-
-<%= link_to 'New Task', new_task_path %>
-
+<ul id="tasks_menu" class="bulletless inline">
+  <li><%= link_to 'New Task', new_task_path %></li>
+</ul>
 <% %w[overdue today tomorrow later someday].each do |list_name| %>
   <div id="<%= list_name %>">
     <h3><%= list_name.capitalize %></h3>
     <ul class="bulletless task_list">
-      <%= render eval("@#{list_name}") %>
+      <% if eval("@#{list_name}.empty?") %>
+        <li class="task"><span class="no_tasks">No tasks</span></li>
+      <% else %>
+        <%= render eval("@#{list_name}") %>
+      <% end %>
     </ul>
   </div>
 <% end %>
