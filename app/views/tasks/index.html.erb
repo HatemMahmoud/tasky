@@ -1,6 +1,6 @@
 <% @title = 'Tasks' %>
-<h2>New task</h2>
-<%= form_for(@task) do |f| %>
+<h2>New Task</h2>
+<%= form_for(@task, :html => {:class => 'inline_form'}) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -13,14 +13,14 @@
   <% end %>
   <div class="field">
     <%= f.label :what %><br/>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'text_field' %>
   </div>
   <div class="field">
     <%= f.label :when %><br/>
-    <%= f.text_field :due_at %>
+    <%= f.text_field :due_at, :class => 'text_field' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Add' %>
+    <%= f.submit 'Add', :class => 'submit' %>
   </div>
 <% end %>
 

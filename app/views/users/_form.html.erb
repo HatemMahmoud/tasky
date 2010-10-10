@@ -11,14 +11,14 @@
   <% end %>
   <%= f.hidden_field :identifier %>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => 'text_field' %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => 'text_field' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', :class => 'submit' %>
   </div>
 <% end %>

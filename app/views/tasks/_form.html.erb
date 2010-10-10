@@ -10,18 +10,18 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => 'text_field' %>
   </div>
   <div class="field">
-    <%= f.label :due_at %><br />
-    <%= f.text_field :due_at %>
+    <%= f.label :due_at %>
+    <%= f.text_field :due_at, :class => 'text_field' %>
   </div>
   <div class="field">
-    <%= f.label :done %><br />
-    <%= f.check_box :done %>
+    <%= f.label :done %>
+    <%= f.check_box :done, :class => 'checkbox' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', :class => 'submit' %>
   </div>
 <% end %>
