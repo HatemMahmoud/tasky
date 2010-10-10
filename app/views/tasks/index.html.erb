@@ -1,7 +1,30 @@
 <% @title = 'Tasks' %>
-<ul id="tasks_menu" class="bulletless inline">
-  <li><%= link_to 'New Task', new_task_path %></li>
-</ul>
+<h2>New task</h2>
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :what %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :when %><br/>
+    <%= f.text_field :due_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Add' %>
+  </div>
+<% end %>
+
+<h2>My Tasks</h2>
 <% %w[overdue today tomorrow later someday].each do |list_name| %>
   <div id="<%= list_name %>">
     <h3><%= list_name.capitalize %></h3>

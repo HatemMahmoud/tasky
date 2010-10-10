@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    color: #666666;
+    color: #777;
     font-size: 13px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     background-color: #F1F1F1;
@@ -13,7 +13,8 @@ h1, h2 {
 
 h1 {
     font-size: 30px;
-    margin:0 0 10px;
+    margin:0;
+    float: left;
 }
 
 h2 {
@@ -50,28 +51,15 @@ p{
   border: 10px solid #E1E1E1;
 }
 
-#user_menu{
-  float: left;
-}
 #menu {
   float: right;
-}
-#tasks_menu{
-  text-align: right;
-  border-bottom:1px solid #CCCCCC;
-  padding:10px 0;
-  text-align:right;
+  margin:22px 0 0;
 }
 
 #footer {
     font-size: 10px;
     text-align: center;
 }
-
-table {
-    width: 100%;
-}
-
 #overdue{
   color:#CC0000;
 }
@@ -158,11 +146,6 @@ form {
     margin: 0px;
     padding: 0px;
 }
-
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
 input, select {
     font: inherit;
 }
@@ -175,6 +158,32 @@ select.small {
     width: 160px;
 }
 
+#new_task{
+  margin:20px 0;
+  overflow:auto;
+}
+#new_task .field, #new_task .actions{
+  float: left;
+}
+#new_task .field{
+  margin: 0 10px 0 0;
+}
+#task_name, #task_due_at, #task_submit{
+  -moz-border-radius: 5px;
+  border:1px solid #CCC;
+  font-weight:bold;
+  padding:9px;
+}
+#task_name{
+  width:450px;
+}
+#task_due_at{
+  width:158px;
+}
+#task_submit{
+  margin:16px 0 0;
+  padding:8px;
+}
 /***** Flash Messages *****/
 .notice, .alert, .note {
     padding: 10px;

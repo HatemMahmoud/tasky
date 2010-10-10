@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    @task = current_user.tasks.new
     @overdue = current_user.tasks.overdue
     @today = current_user.tasks.today
     @tomorrow = current_user.tasks.tomorrow
