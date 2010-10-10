@@ -49,7 +49,10 @@ p{
 }
 #menu {
   float: right;
-  margin:22px 0 0;
+  margin: 22px 0 0;
+}
+#menu a{
+  margin:0 0 0 20px;
 }
 #footer {
     font-size: 10px;
@@ -145,7 +148,7 @@ input, select {
     font: inherit;
 }
 .field, .actions{
-  margin: 10px 0;
+  margin: 15px 0;
   overflow:auto;
 }
 .actions{
@@ -170,9 +173,6 @@ label{
 }
 .inline_form .field{
   margin: 0 10px 0 0;
-}
-.inline_form .submit{
-  margin:6px 0 0;
 }
 .text_field{
   width: 540px;

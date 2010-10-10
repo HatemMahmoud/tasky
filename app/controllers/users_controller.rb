@@ -33,6 +33,8 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       redirect_to tasks_path, :notice => 'Profile was successfully updated.'
+    else
+      render :edit
     end
   end
 
