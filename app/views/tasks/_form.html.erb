@@ -10,6 +10,10 @@
     </div>
   <% end %>
   <div class="field">
+    <%= f.label :project %>
+    <%= f.select :project_id, Project.all.map { |project| [project.name, project.id] }, :include_blank => true %>
+  </div>
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, :class => 'text_field' %>
   </div>

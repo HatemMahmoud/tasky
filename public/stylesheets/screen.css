@@ -144,7 +144,7 @@ form {
     margin: 0px;
     padding: 0px;
 }
-input, select {
+input, select, textarea {
     font: inherit;
 }
 .field, .actions{
@@ -177,11 +177,15 @@ label{
 .text_field{
   width: 540px;
 }
+.textarea{
+  width: 540px;
+  height: 130px;
+}
 .inline_form label{
   margin: 0;
   text-align:left;
 }
-.text_field, .submit{
+.text_field, .textarea, select, .submit{
   border-radius: 5px;
   -moz-border-radius: 5px; 
   -webkit-border-radius: 5px; 

@@ -1,11 +1,11 @@
 <% @title = 'Tasks' %>
 <h2>New Task</h2>
-<%= form_for(@task, :html => {:class => 'inline_form'}) do |f| %>
-  <% if @task.errors.any? %>
+<%= form_for(@new_task, :html => {:class => 'inline_form'}) do |f| %>
+  <% if @new_task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <h2><%= pluralize(@new_task.errors.count, "error") %> prohibited this task from being saved:</h2>
       <ul>
-      <% @task.errors.full_messages.each do |msg| %>
+      <% @new_task.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -23,7 +23,6 @@
     <%= f.submit 'Add', :class => 'submit' %>
   </div>
 <% end %>
-
 <h2>My Tasks</h2>
 <% %w[overdue today tomorrow later someday].each do |list_name| %>
   <div id="<%= list_name %>">
