@@ -46,6 +46,7 @@ p{
   -moz-border-radius: 15px; 
   -webkit-border-radius: 15px; 
   -khtml-border-radius: 15px;
+  overflow:auto;
 }
 #menu {
   float: right;
@@ -53,6 +54,14 @@ p{
 }
 #menu a{
   margin:0 0 0 20px;
+}
+#main{
+  float:left;
+  width: 470px;
+}
+#sidebar{
+  float:right;
+  width: 230px;
 }
 #footer {
     font-size: 10px;
@@ -73,7 +82,7 @@ p{
 #someday{
   color:#999;
 }
-.task{  
+.task, .project{  
   border-bottom: 1px solid #EEEEEE;
   padding:5px 0;
 }
@@ -89,7 +98,7 @@ p{
   color: #999;
 }
 
-.edit, .delete{
+.add, .edit, .delete{
   float: right;
 }
 

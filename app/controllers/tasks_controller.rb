@@ -6,6 +6,7 @@ class TasksController < ApplicationController
     @tomorrow = current_user.tasks.tomorrow
     @later = current_user.tasks.later
     @someday = current_user.tasks.someday
+    @projects = current_user.projects.all
   end
 
   def edit

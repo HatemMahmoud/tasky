@@ -23,16 +23,30 @@
     <%= f.submit 'Add', :class => 'submit' %>
   </div>
 <% end %>
-<h2>My Tasks</h2>
-<% %w[overdue today tomorrow later someday].each do |list_name| %>
-  <div id="<%= list_name %>">
-    <h3><%= list_name.capitalize %></h3>
-    <ul class="bulletless task_list">
-      <% if eval("@#{list_name}.empty?") %>
-        <li class="task"><span class="no_tasks">No tasks</span></li>
-      <% else %>
-        <%= render eval("@#{list_name}") %>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div id="main">
+  <h2>My Tasks</h2>
+  <% %w[overdue today tomorrow later someday].each do |list_name| %>
+    <div id="<%= list_name %>">
+      <h3><%= list_name.capitalize %></h3>
+      <ul class="bulletless task_list">
+        <% if eval("@#{list_name}.empty?") %>
+          <li class="task"><span class="no_tasks">No tasks</span></li>
+        <% else %>
+          <%= render eval("@#{list_name}") %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+<div id="sidebar">
+  <h2>Projects <%= link_to image_tag('add.png'), new_project_path, :class => 'add' %></h2>
+  <ul class="bulletless task_list">
+    <% @projects.each do |project| %>
+      <li class="project">
+        <%= link_to project.name, tasks_path(:project_id => project) %>
+        <%= link_to image_tag('pencil.png'), edit_project_path(project), :class => 'edit' %>
+        <%= link_to image_tag('cross.png'), project, :confirm => 'Delete this project?', :method => :delete, :class => 'delete' %>
+      </li>
+    <% end %>
+  </ul>
+</div>

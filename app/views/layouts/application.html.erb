@@ -13,7 +13,6 @@
       <ul id="menu" class="bulletless inline">
         <% if current_user %>
           <li>Hi, <%= current_user.name %>!</li>
-          <li><%= link_to 'Projects', projects_path %></li>
           <li><%= link_to 'Tasks', tasks_path %></li>
           <li><%= link_to 'Profile', edit_user_path(current_user) %></li>
           <li><%= link_to 'Logout', logout_path %></li>
