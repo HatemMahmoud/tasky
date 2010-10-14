@@ -7,6 +7,7 @@ class TasksController < ApplicationController
     @later = current_user.tasks.later
     @someday = current_user.tasks.someday
     @projects = current_user.projects.all
+    @contexts = current_user.contexts.all
   end
 
   def edit

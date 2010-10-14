@@ -42,10 +42,10 @@ p{
   padding: 0 10px;
   background-color: #FFFFFF;
   border: 10px solid #E1E1E1;
-  border-radius: 15px;
-  -moz-border-radius: 15px; 
-  -webkit-border-radius: 15px; 
-  -khtml-border-radius: 15px;
+  border-radius: 20px;
+  -moz-border-radius: 20px; 
+  -webkit-border-radius: 20px; 
+  -khtml-border-radius: 20px;
   overflow:auto;
 }
 #menu {
@@ -82,7 +82,7 @@ p{
 #someday{
   color:#999;
 }
-.task, .project{  
+.task, .project, .context{  
   border-bottom: 1px solid #EEEEEE;
   padding:5px 0;
 }
@@ -97,11 +97,12 @@ p{
   text-decoration: line-through;
   color: #999;
 }
-
 .add, .edit, .delete{
   float: right;
 }
-
+.add:hover, .edit:hover, .delete:hover{
+  background: none;
+}
 /***** Links *****/
 a {
     color: #0077CC;
@@ -109,26 +110,14 @@ a {
     text-decoration: none;
     outline-style: none;
 }
-
 a:hover {
     color: #FFFFFF;
     background-color: #0077CC;
 }
-
-a.special {
-    color: #CC0000;
-}
-
-a.special:hover {
-    color: #FFFFFF;
-    background-color: #CC0000;
-}
-
 a img {
     border: none;
     vertical-align: middle;
 }
-
 /***** Lists *****/
 ul.bulletless {
     list-style-type: none;
@@ -174,7 +163,7 @@ label{
   width:150px;
 }
 .inline_form{
-  margin:20px 0;
+  margin:15px 0 0;
   overflow:auto;
 }
 .inline_form .field, .inline_form .actions{
@@ -203,12 +192,15 @@ label{
   font-weight:bold;
   padding:9px;
 }
+.text_field:hover, .textarea:hover, select:hover, .submit:hover{
+  border: 1px solid #999;
+}
+.text_field:focus, .textarea:focus, select:focus, .submit:focus{
+  border: 1px solid #999;
+}
 .submit{
   padding:8px;
   border: 1px solid #CCC;
-}
-.submit:hover{
-  border: 1px solid #666;
 }
 .inline_form #task_name{
   width:450px;
@@ -220,26 +212,26 @@ label{
 .notice, .alert, .note {
     padding: 10px;
     border: 1px solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    -khtml-border-radius: 5px;
 }
-
 .notice {
     color: #57861A;
     background-color: #F6FFF6;
     border-color: #99CC99;
 }
-
 .alert {
     color: #CC0000;
     background-color: #FFEBEB;
     border-color: #E88C8C;
 }
-
 .note {
     color: #A47E00;
     background-color: #FFFFEA;
     border-color: #FBE288;
 }
-
 /***** Scaffold Errors *****/
 .field_with_errors input, .field_with_errors textarea, .field_with_errors select {
     border: 1px solid #CC0000;
