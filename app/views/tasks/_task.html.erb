@@ -1,8 +1,8 @@
 <%= content_tag_for :li, task, :class => task.done? ? 'done' : '' do %>
-  <%= task.name %>
-  <span class="date"><%= task.due_at.strftime '%d %b %y' if task.due_at %></span>
   <%= link_to image_tag('cross.png'), task, :confirm => 'Delete this task?', :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
   <%= link_to image_tag('pencil.png'), edit_task_path(task), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
   <%= link_to "@#{task.context.name}", tasks_path(:context_id => task.context), :class => 'tag' if task.context %>
   <%= link_to task.project.name, tasks_path(:project_id => task.project), :class => 'tag' if task.project %>
+  <%= task.name %>
+  <span class="date"><%= task.due_at.strftime '%d %b %y' if task.due_at %></span>
 <% end %>

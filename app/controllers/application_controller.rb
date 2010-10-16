@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  #rescue_from ActionView::MissingTemplate, :with => :render_404
+  rescue_from ActionView::MissingTemplate, :with => :render_404
   
   before_filter :require_user
   helper_method :current_user

@@ -11,11 +11,11 @@
   <% end %>
   <div class="field">
     <%= f.label :project %>
-    <%= f.select :project_id, current_user.projects.map { |project| [project.name, project.id] }, :include_blank => true %>
+    <%= f.select :project_id, @projects.map { |project| [project.name, project.id] }, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :context %>
-    <%= f.select :context_id, current_user.contexts.map { |context| [context.name, context.id] }, :include_blank => true %>
+    <%= f.select :context_id, @contexts.map { |context| [context.name, context.id] }, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :name %>

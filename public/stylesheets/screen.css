@@ -101,7 +101,7 @@ p{
 }
 .task, .project, .context{  
   border-bottom: 1px solid #EEEEEE;
-  padding:5px 0;
+  padding:4px 0 5px;
 }
 .date {
   font-size: 10px;
@@ -111,6 +111,7 @@ p{
   float:right;
   font-size: 10px;
   background-color: #F0F0F0;
+  margin:0 0 0 1px;
 }
 .no_tasks {
   color: #999;

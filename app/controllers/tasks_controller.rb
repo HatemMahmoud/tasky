@@ -1,21 +1,32 @@
 class TasksController < ApplicationController
   def index
     @new_task = current_user.tasks.new
-    @overdue = current_user.tasks.overdue
-    @today = current_user.tasks.today
-    @tomorrow = current_user.tasks.tomorrow
-    @later = current_user.tasks.later
-    @someday = current_user.tasks.someday
-    @projects = current_user.projects.all
-    @contexts = current_user.contexts.all
+    @projects = current_user.projects
+    @contexts = current_user.contexts
+    if params[:project_id]
+      tasks = current_user.tasks.where(:project_id => params[:project_id])
+    elsif params[:context_id]
+      tasks = current_user.tasks.where(:context_id => params[:context_id])
+    else
+      tasks = current_user.tasks
+    end
+    @overdue = tasks.overdue
+    @today = tasks.today
+    @tomorrow = tasks.tomorrow
+    @later = tasks.later
+    @someday = tasks.someday
   end
 
   def edit
     @task = current_user.tasks.find params[:id]
+    @projects = current_user.projects
+    @contexts = current_user.contexts
   end
 
   def create
     @task = current_user.tasks.new params[:task]
+    @projects = current_user.projects
+    @contexts = current_user.contexts
     if @task.save
       redirect_to tasks_path, :notice => 'Task was successfully created.'
     else
