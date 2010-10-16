@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_user, :only => [:index, :new, :create]
-
-  def index
-    @users = User.all
-  end
+  skip_before_filter :require_user, :only => [:new, :create]
 
   def new
     if session[:new_user_data].blank?
@@ -37,5 +33,4 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
 end

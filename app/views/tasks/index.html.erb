@@ -27,7 +27,7 @@
   <% %w[overdue today tomorrow later someday].each do |list_name| %>
     <div id="<%= list_name %>">
       <h2><%= list_name.capitalize %></h2>
-      <ul class="bulletless task_list">
+      <ul class="list">
         <% if eval("@#{list_name}.empty?") %>
           <li class="task"><span class="no_tasks">No tasks</span></li>
         <% else %>
@@ -39,21 +39,21 @@
 </div>
 <div id="sidebar">
   <h2>Projects <%= link_to image_tag('add.png'), new_project_path, :alt => 'Add', :title => 'Add', :class => 'add' %></h2>
-  <ul class="bulletless task_list">
+  <ul class="list">
     <% @projects.each do |project| %>
       <li class="project">
-        <%= link_to project.name, tasks_path(:project_id => project) %>
-        <%= link_to image_tag('cross.png'), project, :confirm => 'Delete this project?', :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
+        <%= link_to_unless_current(project.name, tasks_path(:project_id => project)) {|name, link| link_to name, link, :class => 'selected' } %>
+        <%= link_to image_tag('cross.png'), project, :confirm => "Delete '#{project.name}' project and all of its tasks?", :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
         <%= link_to image_tag('pencil.png'), edit_project_path(project), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
       </li>
     <% end %>
   </ul>
   <h2>Contexts <%= link_to image_tag('add.png'), new_context_path, :alt => 'Add', :title => 'Add', :class => 'add' %></h2>
-  <ul class="bulletless task_list">
+  <ul class="list">
     <% @contexts.each do |context| %>
       <li class="context">
-        <%= link_to "@#{context.name}", tasks_path(:context_id => context) %>
-        <%= link_to image_tag('cross.png'), context, :confirm => 'Delete this context?', :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
+        <%= link_to_unless_current("@#{context.name}", tasks_path(:context_id => context)) {|name, link| link_to name, link, :class => 'selected' } %>
+        <%= link_to image_tag('cross.png'), context, :confirm => "Delete '@#{context.name}' context?", :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
         <%= link_to image_tag('pencil.png'), edit_context_path(context), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
       </li>
     <% end %>
