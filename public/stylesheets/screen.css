@@ -230,7 +230,8 @@ label{
   background: -moz-linear-gradient(center top, #F9F9F9, #E0E0E0) repeat scroll 0 0 transparent;
 }
 .submit:hover{
-  text-shadow: -1px -1px 0 #FFF;
+  text-shadow: 0 0 0 #FFF;
+  border: 1px solid #BBB;
   background: -moz-linear-gradient(center top, #E0E0E0, #F9F9F9) repeat scroll 0 0 transparent;
 }
 .inline_form #task_name{

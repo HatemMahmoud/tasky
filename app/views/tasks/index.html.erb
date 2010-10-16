@@ -52,7 +52,7 @@
   <ul class="bulletless task_list">
     <% @contexts.each do |context| %>
       <li class="context">
-        <%= link_to context.name, tasks_path(:context_id => context) %>
+        <%= link_to "@#{context.name}", tasks_path(:context_id => context) %>
         <%= link_to image_tag('cross.png'), context, :confirm => 'Delete this context?', :method => :delete, :class => 'delete' %>
         <%= link_to image_tag('pencil.png'), edit_context_path(context), :class => 'edit' %>
       </li>
