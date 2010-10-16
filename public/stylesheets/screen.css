@@ -1,12 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    color: #777;
+    color: #666;
     font-size: 13px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     background-color: #F7F7F7;
+    border-top:7px solid #0077CC;
 }
-h1, h2 {
+h1, h2, h3 {
     font-family: "Trebuchet MS";
 }
 h1 {
@@ -15,16 +16,18 @@ h1 {
     float: left;
 }
 h2 {
-    border-bottom: 1px solid #CCCCCC;
-    font-size: 20px;
+    border-bottom: 1px solid #CCC;
+    font-size: 16px;
     padding: 0 0 10px;
-    color: #555
+}
+#main h2, #sidebar h2{
+  margin-bottom: 0;
+  padding: 0 0 5px;
 }
 h3 {
-    border-bottom:1px solid #CCCCCC;
-    font-size:14px;
-    margin:10px 0 0;
-    padding:10px 0;
+    border-bottom:1px solid #EEE;
+    font-size:15px;
+    padding:5px 0;
 }
 p{
   margin:10px 0;
@@ -50,10 +53,24 @@ p{
 }
 #menu {
   float: right;
-  margin: 22px 0 0;
+  margin: 17px 0 0;
 }
 #menu a{
-  margin:0 0 0 20px;
+  margin:0 0 0 10px;
+  padding:5px 15px;
+  background-color: #F0F0F0;
+  border-radius: 20px;
+  -moz-border-radius: 20px; 
+  -webkit-border-radius: 20px; 
+  -khtml-border-radius: 20px;
+}
+#menu a:hover, #menu .selected{
+  color:#FFF;
+  background-color: #0077CC;
+  border-radius: 20px;
+  -moz-border-radius: 20px; 
+  -webkit-border-radius: 20px; 
+  -khtml-border-radius: 20px;
 }
 #main{
   float:left;
@@ -68,7 +85,7 @@ p{
     text-align: center;
 }
 #overdue{
-  color:#CC0000;
+  color:#AA0000;
 }
 #today{
   color:#57861A;
@@ -90,6 +107,11 @@ p{
   font-size: 10px;
   color: #999;
 }
+.tag {
+  float:right;
+  font-size: 10px;
+  background-color: #F0F0F0;
+}
 .no_tasks {
   color: #999;
 }
@@ -99,6 +121,8 @@ p{
 }
 .add, .edit, .delete{
   float: right;
+  margin:0 0 0 5px;
+  padding:0;
 }
 .add:hover, .edit:hover, .delete:hover{
   background: none;
@@ -106,9 +130,13 @@ p{
 /***** Links *****/
 a {
     color: #0077CC;
-    padding: 0 2px 1px;
+    padding: 2px 7px 3px;
     text-decoration: none;
     outline-style: none;
+    border-radius: 10px;
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    -khtml-border-radius: 10px;
 }
 a:hover {
     color: #FFFFFF;
@@ -122,21 +150,17 @@ a img {
 ul.bulletless {
     list-style-type: none;
 }
-
 ul.task_list{
   margin: 0 0 10px;
   padding: 0;
 }
-
 ul.inline {
   margin: 0;
   padding: 0;
 }
-
 ul.inline li {
   display: inline;
 }
-
 /***** Forms *****/
 form {
     margin: 0px;
@@ -146,7 +170,7 @@ input, select, textarea {
     font: inherit;
 }
 .field, .actions{
-  margin: 15px 0;
+  margin: 16px 0;
   overflow:auto;
 }
 .actions{
@@ -193,14 +217,21 @@ label{
   padding:9px;
 }
 .text_field:hover, .textarea:hover, select:hover, .submit:hover{
-  border: 1px solid #999;
+  border: 1px solid #CCC;
 }
 .text_field:focus, .textarea:focus, select:focus, .submit:focus{
-  border: 1px solid #999;
+  border: 1px solid #CCC;
 }
 .submit{
+  color:#333;
   padding:8px;
+  text-shadow:1px 1px 0 #FFF;
   border: 1px solid #CCC;
+  background: -moz-linear-gradient(center top, #F9F9F9, #E0E0E0) repeat scroll 0 0 transparent;
+}
+.submit:hover{
+  text-shadow: -1px -1px 0 #FFF;
+  background: -moz-linear-gradient(center top, #E0E0E0, #F9F9F9) repeat scroll 0 0 transparent;
 }
 .inline_form #task_name{
   width:450px;

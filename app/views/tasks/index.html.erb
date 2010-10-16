@@ -24,10 +24,9 @@
   </div>
 <% end %>
 <div id="main">
-  <h2>Tasks</h2>
   <% %w[overdue today tomorrow later someday].each do |list_name| %>
     <div id="<%= list_name %>">
-      <h3><%= list_name.capitalize %></h3>
+      <h2><%= list_name.capitalize %></h2>
       <ul class="bulletless task_list">
         <% if eval("@#{list_name}.empty?") %>
           <li class="task"><span class="no_tasks">No tasks</span></li>
