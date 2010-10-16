@@ -38,23 +38,23 @@
   <% end %>
 </div>
 <div id="sidebar">
-  <h2>Projects <%= link_to image_tag('add.png'), new_project_path, :class => 'add' %></h2>
+  <h2>Projects <%= link_to image_tag('add.png'), new_project_path, :alt => 'Add', :title => 'Add', :class => 'add' %></h2>
   <ul class="bulletless task_list">
     <% @projects.each do |project| %>
       <li class="project">
         <%= link_to project.name, tasks_path(:project_id => project) %>
-        <%= link_to image_tag('cross.png'), project, :confirm => 'Delete this project?', :method => :delete, :class => 'delete' %>
-        <%= link_to image_tag('pencil.png'), edit_project_path(project), :class => 'edit' %>
+        <%= link_to image_tag('cross.png'), project, :confirm => 'Delete this project?', :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
+        <%= link_to image_tag('pencil.png'), edit_project_path(project), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
       </li>
     <% end %>
   </ul>
-  <h2>Contexts <%= link_to image_tag('add.png'), new_context_path, :class => 'add' %></h2>
+  <h2>Contexts <%= link_to image_tag('add.png'), new_context_path, :alt => 'Add', :title => 'Add', :class => 'add' %></h2>
   <ul class="bulletless task_list">
     <% @contexts.each do |context| %>
       <li class="context">
         <%= link_to "@#{context.name}", tasks_path(:context_id => context) %>
-        <%= link_to image_tag('cross.png'), context, :confirm => 'Delete this context?', :method => :delete, :class => 'delete' %>
-        <%= link_to image_tag('pencil.png'), edit_context_path(context), :class => 'edit' %>
+        <%= link_to image_tag('cross.png'), context, :confirm => 'Delete this context?', :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
+        <%= link_to image_tag('pencil.png'), edit_context_path(context), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
       </li>
     <% end %>
   </ul>
