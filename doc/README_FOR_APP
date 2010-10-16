@@ -1,2 +1,17 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Must
+====
+- validate datetime
+- ajaxify
+  - task create/done/delete
+  - project create/delete
+  - context create/delete
+- in-place edit task/project/context
+- drag-n-drop sorting
+
+Nice
+====
+- OmniAuth authentication
+- drag-n-drop project/context
+- recurrent tasks: daily/weekly/yearly
+- detect: tomorrow, sunday, etc.
+- email reminders

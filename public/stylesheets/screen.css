@@ -204,6 +204,9 @@ label{
 .text_field{
   width: 540px;
 }
+select{
+  width: 560px;
+}
 .textarea{
   width: 540px;
   height: 130px;
@@ -244,6 +247,9 @@ label{
 }
 .inline_form #task_due_at{
   width:158px;
+}
+.example{
+  font-size:10px;
 }
 /***** Flash Messages *****/
 .notice, .alert, .note {

@@ -18,15 +18,30 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find params[:id]
     @projects = current_user.projects
     @contexts = current_user.contexts
+    @task = current_user.tasks.find params[:id]
   end
 
   def create
-    @task = current_user.tasks.new params[:task]
     @projects = current_user.projects
     @contexts = current_user.contexts
+    @task = current_user.tasks.new params[:task]
+    
+    if params[:task][:name].include?('>')
+      project = params[:task][:name].split('>').last.strip.split(' ').first
+      @task.project = current_user.projects.find_or_create_by_name(project)
+      @task.name.gsub! ">", ''
+      @task.name.gsub! project, ''
+    end
+    
+    if params[:task][:name].include?('@')
+      context = params[:task][:name].split('@').last.strip.split(' ').first
+      @task.context = current_user.contexts.find_or_create_by_name(context)
+      @task.name.gsub! "@", ''
+      @task.name.gsub! context, ''
+    end
+    
     if @task.save
       redirect_to tasks_path, :notice => 'Task was successfully created.'
     else
