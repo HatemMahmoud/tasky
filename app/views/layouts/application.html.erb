@@ -9,7 +9,7 @@
 <body>
   <div id="wrapper">
     <div id="header">
-      <h1><%= link_to 'Tasky', root_path %></h1>
+      <h1 id="logo"><%= link_to 'Tasky', root_path %></h1>
       <ul id="menu" class="inline_list">
         <% if current_user %>
           <li>Hi, <%= current_user.name %>!</li>
@@ -28,12 +28,7 @@
       <%= yield %>
     </div>
     <div id="footer">
-      <p>© <%= Time.now.strftime('%Y') %> <%= link_to 'Made in ExpressionLab', 'http://www.expressionlab.com', :target => '_blank' %></p>
-      <ul class="inline_list">
-        <li><%= link_to 'About', page_path('about') %></li>
-        <li><%= link_to 'Help', page_path('help') %></li>
-        <li><%= link_to 'Contact', page_path('contact') %></li>
-      </ul>
+      <p><%= link_to 'Made in ExpressionLab', 'http://www.expressionlab.com', :target => '_blank' %></p>
     </div>
   </div>
 </body>

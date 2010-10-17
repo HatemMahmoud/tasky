@@ -5,7 +5,7 @@ Tasky is the best task manager for [Getting Things Done](http://en.wikipedia.org
 ## Features
 
 - Users (authentication, profile)
-- Semi-Static Pages (home, about, etc.)
+- Semi-Static Pages (home, help, etc.)
 - User has many tasks (quick add/view)
 - Some tasks belong to projects
 - Some tasks belong to contexts

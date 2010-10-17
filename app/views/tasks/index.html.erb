@@ -31,7 +31,7 @@
       <h2><%= list_name.capitalize %></h2>
       <ul class="list">
         <% if eval("@#{list_name}.empty?") %>
-          <li class="task"><span class="no_tasks">No tasks</span></li>
+          <li class="empty">No tasks</li>
         <% else %>
           <%= render eval("@#{list_name}") %>
         <% end %>
@@ -42,22 +42,30 @@
 <div id="sidebar">
   <h2>Projects <%= link_to image_tag('add.png'), new_project_path, :alt => 'Add', :title => 'Add', :class => 'add' %></h2>
   <ul class="list">
-    <% @projects.each do |project| %>
-      <li class="project">
-        <%= link_to_unless_current(project.name, tasks_path(:project_id => project)) {|name, link| link_to name, link, :class => 'selected' } %>
-        <%= link_to image_tag('cross.png'), project, :confirm => "Delete '#{project.name}' project and all of its tasks?", :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
-        <%= link_to image_tag('pencil.png'), edit_project_path(project), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
-      </li>
+    <% if @projects.empty? %>
+      <li class="empty">No projects</li>
+    <% else %>
+      <% @projects.each do |project| %>
+        <li class="project">
+          <%= link_to_unless_current(project.name, tasks_path(:project_id => project)) {|name, link| link_to name, link, :class => 'selected' } %>
+          <%= link_to image_tag('cross.png'), project, :confirm => "Delete project '#{project.name}' and all of its tasks?", :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
+          <%= link_to image_tag('pencil.png'), edit_project_path(project), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
   <h2>Contexts <%= link_to image_tag('add.png'), new_context_path, :alt => 'Add', :title => 'Add', :class => 'add' %></h2>
   <ul class="list">
-    <% @contexts.each do |context| %>
-      <li class="context">
-        <%= link_to_unless_current("@#{context.name}", tasks_path(:context_id => context)) {|name, link| link_to name, link, :class => 'selected' } %>
-        <%= link_to image_tag('cross.png'), context, :confirm => "Delete '@#{context.name}' context?", :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
-        <%= link_to image_tag('pencil.png'), edit_context_path(context), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
-      </li>
+    <% if @contexts.empty? %>
+      <li class="empty">No contexts</li>
+    <% else %>
+      <% @contexts.each do |context| %>
+        <li class="context">
+          <%= link_to_unless_current("@#{context.name}", tasks_path(:context_id => context)) {|name, link| link_to name, link, :class => 'selected' } %>
+          <%= link_to image_tag('cross.png'), context, :confirm => "Delete context '@#{context.name}'?", :method => :delete, :alt => 'Delete', :title => 'Delete', :class => 'delete' %>
+          <%= link_to image_tag('pencil.png'), edit_context_path(context), :alt => 'Edit', :title => 'Edit', :class => 'edit' %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

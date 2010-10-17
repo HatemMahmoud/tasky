@@ -1,12 +1,21 @@
 Must
 ====
+- view done tasks
 - validate datetime
+- validate task name with project/context
 - ajaxify
   - task create/done/delete
   - project create/delete
   - context create/delete
 - in-place edit task/project/context
 - drag-n-drop sorting
+- rescue 404 and 500 errors
+- help page
+- contact page
+
+Bugs
+====
+- IE: cancellig a delete alert doesn't cancel it 
 
 Nice
 ====
