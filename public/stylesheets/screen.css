@@ -235,6 +235,8 @@ select{
 .submit{
   color:#333;
   padding:8px;
+  margin-left:0;
+  margin-right:0;
   text-shadow:1px 1px 0 #FFF;
   border: 1px solid #CCC;
   background: -moz-linear-gradient(center top, #F9F9F9, #E0E0E0) repeat scroll 0 0 transparent;
@@ -253,7 +255,7 @@ select{
   width:450px;
 }
 .inline_form #task_due_at{
-  width:157px;
+  width:158px;
 }
 .example{
   font-size:10px;

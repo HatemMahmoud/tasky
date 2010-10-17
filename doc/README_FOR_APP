@@ -1,5 +1,6 @@
 Must
 ====
+- welcome email
 - view done tasks
 - validate datetime
 - validate task name with project/context
@@ -10,8 +11,7 @@ Must
 - in-place edit task/project/context
 - drag-n-drop sorting
 - rescue 404 and 500 errors
-- help page
-- contact page
+- fix viewsin Safari
 
 Bugs
 ====
