@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if @user.save
       self.current_user = @user
       flash[:notice] = 'Thanks for signing up!'
-      redirect_back_or_default root_path
+      redirect_back_or_default tasks_path
     else
       render :new
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to tasks_path, :notice => 'Profile was successfully updated.'
+      redirect_to tasks_path, :notice => 'Settings were successfully updated.'
     else
       render :edit
     end

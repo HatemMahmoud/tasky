@@ -11,18 +11,10 @@ h1, h2, h3 {
     font-family: "Trebuchet MS";
 }
 h1 {
-    color:#000000;
-    font-size:34px;
-    margin:20px 0;
-    padding:20px;
-    text-align:center;
-}
-#logo {
+    border:medium none;
+    float:left;
     font-size:30px;
-    float: left;
     margin:0;
-    padding:0;
-    border:none;
 }
 h2 {
     border-bottom: 1px solid #CCC;
@@ -79,11 +71,29 @@ p{
 }
 #features{
   font-size:14px;
-  line-height: 24px;
-  color: #333;
+  line-height:24px;
+}
+#features div{
+  float:left;
+  margin:0 70px 10px;
+}
+#features h1{
+  color:#000000;
+  float:none;
+  font-size:34px;
+  margin:60px 0 10px;
+  text-align:center;
 }
 #features h2{
-  font-size:20px;
+  border-bottom:1px solid #CCC;
+  font-size:22px;
+  padding:0 0 50px;
+  text-align:center;
+}
+#features h3{
+  border-bottom:1px solid #E2E2E2;
+  font-size:16px;
+  padding:0 0 10px;
 }
 #features li{
   background: url("/images/accept.png") no-repeat scroll 10px center transparent;

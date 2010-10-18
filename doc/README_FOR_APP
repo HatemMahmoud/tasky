@@ -1,6 +1,7 @@
 Must
 ====
 - welcome email
+- user should pick time zone
 - view done tasks
 - validate datetime
 - validate task name with project/context
@@ -12,6 +13,7 @@ Must
 - drag-n-drop sorting
 - rescue 404 and 500 errors
 - fix viewsin Safari
+- site wide announcements for new versions, upgrades, down time, etc.
 
 Bugs
 ====

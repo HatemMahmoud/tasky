@@ -27,16 +27,19 @@
 <% end %>
 <div id="main">
   <% %w[overdue today tomorrow later someday].each do |list_name| %>
-    <div id="<%= list_name %>">
-      <h2><%= list_name.capitalize %></h2>
-      <ul class="list">
-        <% if eval("@#{list_name}.empty?") %>
-          <li class="empty">No tasks</li>
-        <% else %>
-          <%= render eval("@#{list_name}") %>
-        <% end %>
-      </ul>
-    </div>
+    <% @list = eval("@#{list_name}") %>
+    <% unless (list_name=='overdue' && @list.empty?) %>
+      <div id="<%= list_name %>">
+        <h2><%= list_name.capitalize %></h2>
+        <ul class="list">
+          <% if @list.empty? %>
+            <li class="empty">No tasks</li>
+          <% else %>
+            <%= render @list %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 </div>
 <div id="sidebar">
