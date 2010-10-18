@@ -28,6 +28,13 @@ class TasksController < ApplicationController
     @contexts = current_user.contexts
     @task = current_user.tasks.new params[:task]
     
+    case params[:task][:due_at].downcase
+    when 'today', 'tod'
+      @task.due_at = Date.today.midnight
+    when 'tomorrow', 'tom'
+      @task.due_at = Date.tomorrow.midnight
+    end
+    
     if params[:task][:name].include?('>')
       project = params[:task][:name].split('>').last.strip.split(' ').first
       @task.project = current_user.projects.find_or_create_by_name(project)
