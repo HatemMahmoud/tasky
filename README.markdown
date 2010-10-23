@@ -1,33 +1,33 @@
 # Tasky
 
-Tasky is the best task manager for [Getting Things Done](http://en.wikipedia.org/wiki/Getting_Things_Done).
+Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getting_Things_Done).
+
+## How it Works
+
+* Get things off your mind
+* Group tasks into projects
+* Work in contexts
+* Focus on the next action
+* Review weekly
 
 ## Features
 
-- Users (authentication, profile)
-- Semi-Static Pages (home, help, etc.)
-- User has many tasks (quick add/view)
-- Some tasks belong to projects
-- Some tasks belong to contexts
-- Today, Tomorrow, Later, Someday
+* Stupid Simple!
+* No registration
+* Clean design
+* One-page app
+* Everything you want
+* Nothing you don't!
 
 ## Future Versions
 
-- Drag n Drop
-- Share tasks with others
-- Detailed reports and charts
-- Firefox extension
-- Mobile view
-- iPhone and iPad apps
+* In-place editing
+* Drag-and-drop
+* Recurring dates
+* Share tasks with others
+* Detailed reports and charts
+* Mobile view
 
 ## Demo
 
 http://tasky.heroku.com/
-
-## Background - Getting Things Done
-
-1. Move tasks out of your mind
-2. Group related tasks in projects
-3. Work in contexts (home, office, phone, etc.)
-4. Focus on the next action
-5. Review weekly
