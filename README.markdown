@@ -27,7 +27,3 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 * Share tasks with others
 * Detailed reports and charts
 * Mobile view
-
-## Demo
-
-http://tasky.heroku.com/
