@@ -1,8 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.1'
 gem 'rpx_now', '0.6.23'
 
+group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -29,6 +32,3 @@ gem 'rpx_now', '0.6.23'
 # group :development, :test do
 #   gem 'webrat'
 # end
-group :development, :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
