@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.0.3'
 gem 'rpx_now', '0.6.23'
 
 group :development, :test do
