@@ -222,9 +222,6 @@ label{
 .text_field{
   width: 540px;
 }
-select{
-  width: 560px;
-}
 .textarea{
   width: 540px;
   height: 130px;
@@ -241,6 +238,10 @@ select{
   border:1px solid #EEEEEE;
   font-weight:bold;
   padding:9px;
+}
+select{
+  width: 560px;
+  padding:8px;
 }
 .submit{
   color:#333;
@@ -262,13 +263,19 @@ select{
   border: 1px solid #CCC;
 }
 .inline_form #task_name{
-  width:450px;
+  width:700px;
+  margin-bottom: 10px;
+}
+.inline_form select{
+  width:220px;
+  /* Simulate padding for Safari */
+  text-indent:4px;
+  line-height:30px;
+  /* Reset padding for Firefox */
+  padding-left: 0;
 }
 .inline_form #task_due_at{
-  width:158px;
-}
-.example{
-  font-size:10px;
+  width:178px;
 }
 /***** Flash Messages *****/
 .notice, .alert, .note {

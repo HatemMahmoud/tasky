@@ -21,8 +21,19 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 
 ## Future Versions
 
+### Version 0.2
+
+* upgrade to Rails 3.0.3
+* separate project and context input fields
+* auto-complete project and context 
+* one-page-app: ajaxify CRUDs
+* datetime format help popup 
 * In-place editing
 * Drag-and-drop
+
+### Later
+
+* replace Janrain with OmniAuth
 * Recurring dates
 * Share tasks with others
 * Detailed reports and charts
