@@ -27,6 +27,7 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 * separate project and context input fields
 * display count with each list
 * replace Prototype with jQuery
+* fixed select lists style in Safari
  
 * one-page-app: ajaxify CRUDs
 * In-place editing

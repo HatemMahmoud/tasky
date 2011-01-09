@@ -44,8 +44,12 @@ class TasksController < ApplicationController
 
   def update
     @task = current_user.tasks.find params[:id]
+
     if @task.update_attributes(params[:task])
-      redirect_to tasks_path, :notice => 'Task was successfully updated.'
+      respond_to do |format|
+        # format.html {redirect_to tasks_path, :notice => 'Task was successfully updated.'}
+        format.js
+      end
     else
       render :edit
     end

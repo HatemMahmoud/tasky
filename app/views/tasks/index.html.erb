@@ -36,7 +36,7 @@
     <% @list = eval("@#{list_name}") %>
     <% unless (list_name=='overdue' && @list.empty?) %>
       <div id="<%= list_name %>">
-        <h2><%= list_name.capitalize %></h2>
+        <h2><%= "#{list_name.capitalize} (#{@list.size})" %></h2>
         <ul class="list">
           <% if @list.empty? %>
             <li class="empty">No tasks</li>
@@ -78,3 +78,16 @@
     <% end %>
   </ul>
 </div>
+<% content_for :javascript do %>
+  <%= javascript_include_tag 'jquery.jeditable.js' %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.editable').each( function(i) {
+        $(this).editable($(this).attr("id"), {
+          method: 'PUT',
+          name: $(this).attr("rel")
+        });
+      });
+    });
+  </script>
+<% end %>
