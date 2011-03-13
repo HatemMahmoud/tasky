@@ -12,7 +12,6 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 
 ## Features
 
-* Stupid Simple!
 * No registration
 * Clean design
 * One-page app
