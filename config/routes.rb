@@ -1,5 +1,8 @@
 Tasky::Application.routes.draw do
   resources :pages, :only => :show
+  match '/auth/failure' => 'sessions#failure'
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/logout' => 'sessions#destroy', :as => :logout
   root :to => 'pages#show', :id => :home
 
   # The priority is based upon order of creation:

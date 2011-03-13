@@ -11,7 +11,12 @@
     <h1><%= link_to 'Tasky', root_path %></h1>
     <nav>
       <ul>
-        <li><%= link_to 'Login with Twitter', '#' %></li>
+        <% if current_user %>
+          <li>Welcome, <%= current_user.name %>!</li>
+          <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>
+        <% end %>
       </ul>
     </nav>
   </header>
