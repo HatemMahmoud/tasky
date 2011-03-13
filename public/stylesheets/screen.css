@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #474747;
+  font-size: 13px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #F7F7F7;
+  border-top: 7px solid #0077CC;
+}
+a {
+  color: #0077CC;
+  padding: 1px 3px 2px;
+  text-decoration: none;
+  outline-style: none;
+  border-radius: 2px;
+  -moz-border-radius: 2px; 
+  -webkit-border-radius: 2px; 
+}
+a:hover {
+  color: #FFFFFF;
+  background-color: #0077CC;
+}
+h1, h2 {
+  font-family: "Trebuchet MS";
+}
+    h1 a:hover {
+      color: #0077CC;
+      background: none;
+    }
+header {
+  display: block;
+  margin: 0 auto;
+  width: 760px;
+  padding: 10px;
+  overflow: auto;
+}
+    header h1 {
+      border: none;
+      float: left;
+      font-size: 30px;
+      margin: 0;
+    }
+    nav {
+      float: right;
+      margin: 17px 0 0;
+    }
+        nav ul {
+          margin: 0;
+          padding: 0;
+        }
+            nav li {
+              display: inline;
+            }
+            nav a{
+              margin: 0 0 0 10px;
+              padding: 5px 15px;
+              background-color: #EEEEEE;
+              border-radius: 5px;
+              -moz-border-radius: 5px; 
+              -webkit-border-radius: 5px; 
+            }
+section {
+  display: block;
+  margin: 0 auto;
+  width: 760px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+   box-shadow: 0px 1px 10px #CCC;
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 10px #CCC;
+  overflow: auto;
+}
+    hgroup h1{
+      color: #000000;
+      float: none;
+      font-size: 34px;
+      margin: 200px 0 10px;
+      text-align: center;
+    }
+    hgroup h2{
+      font-size: 22px;
+      margin: 0 0 200px;
+      padding: 0;
+      text-align: center;
+    }
+    .notice, .alert {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid;
+      border-radius: 5px;
+      -moz-border-radius: 5px; 
+      -webkit-border-radius: 5px; 
+    }
+    .notice {
+      color: #57861A;
+      background-color: #F6FFF6;
+      border-color: #99CC99;
+    }
+    .alert {
+      color: #CC0000;
+      background-color: #FFEBEB;
+      border-color: #E88C8C;
+    }
+footer {
+  font-size: 10px;
+  text-align: center;
+}
