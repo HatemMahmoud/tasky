@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: #474747;
+  color: #666;
   font-size: 13px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   background-color: #F7F7F7;
@@ -16,22 +16,39 @@ a {
   -moz-border-radius: 2px; 
   -webkit-border-radius: 2px; 
 }
-a:hover {
+a:hover, .active {
   color: #FFFFFF;
   background-color: #0077CC;
 }
 h1, h2 {
   font-family: "Trebuchet MS";
 }
+    h1{
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
     h1 a:hover {
       color: #0077CC;
       background: none;
     }
+#container {
+  margin: 0 auto;
+  padding: 0;
+  width: 760px;
+}
+#content {
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  -moz-border-radius: 7px; 
+  -webkit-border-radius: 7px; 
+   box-shadow: 0px 1px 10px #CCC;
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 10px #CCC;
+}
 header {
   display: block;
-  margin: 0 auto;
-  width: 760px;
-  padding: 10px;
+  padding: 10px 0;
   overflow: auto;
 }
     header h1 {
@@ -59,19 +76,6 @@ header {
               -moz-border-radius: 5px; 
               -webkit-border-radius: 5px; 
             }
-section {
-  display: block;
-  margin: 0 auto;
-  width: 760px;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  -moz-border-radius: 5px; 
-  -webkit-border-radius: 5px; 
-   box-shadow: 0px 1px 10px #CCC;
-  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 1px 10px #CCC;
-  overflow: auto;
-}
     hgroup h1{
       color: #000000;
       float: none;
@@ -85,13 +89,99 @@ section {
       padding: 0;
       text-align: center;
     }
+    form{
+      overflow: auto;
+      margin: 0 0 20px;
+      padding: 15px;
+      background-color: #F9F9F9;
+      border: 2px solid #CCC;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+    }
+    fieldset{
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    label{
+      display: block;
+      color: #999;
+    }
+    .text_field{
+      width: 700px;
+      margin: 0 0 10px;
+    }
+        #add_task fieldset{
+          float: left;
+          margin: 0;
+          padding: 0;
+          border: none;
+        }
+        #add_task #task_name{
+          width: 425px;
+          margin: 0 10px 0 0;
+        }
+        #add_task #task_due_at{
+          width: 200px;
+          margin: 0 10px 0 0;
+        }
+        #add_task #task_submit{
+          margin: 15px 0 0;
+        }
+    section h1{
+      font-size: 16px;
+      margin: 20px 0 0;
+      border-bottom: 1px solid #CCCCCC;
+    }
+    section a{
+      color: #666;
+    }
+    section a:hover{
+      color: #FFFFFF;
+      background-color: #666;
+    }
+    #overdue h1{
+      color:#AA0000;
+    }
+    #today h1{
+      color:#57861A;
+    }
+    #tomorrow h1{
+      color:#000;
+    }
+    #later h1{
+      color:#666;
+    }
+    #someday h1{
+      color:#999;
+    }
+    #done h1{
+      color:#ccc;
+    }
+        #done li{
+          text-decoration: line-through;
+        }
+    section ul{
+      list-style-type: none;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+        section li {
+          border-bottom: 1px solid #EEEEEE;
+          padding: 4px 0 5px;
+        }
+        time{
+          color: #999999;
+          font-size: 10px;
+        }
     .notice, .alert {
-      margin: 10px;
+      margin: 0 0 10px;
       padding: 10px;
       border: 1px solid;
       border-radius: 5px;
-      -moz-border-radius: 5px; 
-      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
     }
     .notice {
       color: #57861A;
@@ -102,6 +192,28 @@ section {
       color: #CC0000;
       background-color: #FFEBEB;
       border-color: #E88C8C;
+    }
+    .field_with_errors input, .field_with_errors textarea, .field_with_errors select {
+      border: 1px solid #CC0000;
+    }
+    #error_explanation {
+      background-color: #FFEBEB;
+      border: 2px solid #E88C8C;
+      margin: 0 0 10px;
+      padding: 0pt 15px;
+      border-radius: 5px;
+      -moz-border-radius: 5px; 
+      -webkit-border-radius: 5px; 
+    }
+    #error_explanation h2 {
+      color: #CC0000;
+      font-size: 16px;
+      border: none;
+      margin:10px 0;
+      padding:0;
+    }
+    #error_explanation ul {
+      margin: 0 0 10px;
     }
 footer {
   font-size: 10px;

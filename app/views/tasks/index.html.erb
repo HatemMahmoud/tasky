@@ -1,0 +1,27 @@
+<% @title = 'Tasks' %>
+<div id="add_task">
+  <%= form_for(@new_task) do |f| %>
+    <fieldset>
+      <label for="task_name">Task</label>
+      <input type="text" id="task_name" name="task[name]" class="text_field" required="required">
+    </fieldset>
+    <fieldset>
+      <label for="task_when">Due at</label>
+      <input type="datetime" id="task_due_at" name="task[due_at]" class="text_field">
+    </fieldset>
+    <fieldset>
+      <input type="submit" id="task_submit" name="commit" value="Add" class="submit">
+    </fieldset>
+  <% end %>
+</div>
+<% %w[overdue today tomorrow later someday done].each do |list_name| %>
+  <% @list = eval("@#{list_name}") %>
+  <% unless @list.empty? %>
+    <section id="<%= list_name %>">
+      <h1><%= "#{@list.size} #{list_name.capitalize}" %></h1>
+      <ul>
+        <%= render @list %>
+      </ul>
+    </section>
+  <% end %>
+<% end %>

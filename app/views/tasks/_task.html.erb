@@ -1,0 +1,7 @@
+<%= content_tag_for :li, task do %>
+  <%= link_to '[x]', task, :confirm => "Delete task '#{task.name}'?", :method => :delete, :class => 'delete' %>
+  <%= link_to task.name, edit_task_path(task) %>
+  <% if task.due_at %>
+    <time><%= task.due_at.strftime '%d %b %Y' %></time>
+  <% end %>
+<% end %>

@@ -1,0 +1,27 @@
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+    <ul>
+    <% @task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for(@task) do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true, :class => 'text_field' %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :due_at %>
+    <input type="datetime" id="task_due_at" name="task[due_at]" class="text_field">
+  </fieldset>
+  <fieldset>
+    <%= f.label :done %>
+    <%= f.check_box :done %>
+  </fieldset>
+  <fieldset>
+    <%= f.submit %>
+  </fieldset>
+<% end %>
