@@ -91,7 +91,6 @@ header {
     }
     form{
       overflow: auto;
-      margin: 0 0 20px;
       padding: 15px;
       background-color: #F9F9F9;
       border: 2px solid #CCC;
