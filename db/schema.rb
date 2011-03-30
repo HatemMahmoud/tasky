@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20110325173836) do
     t.integer  "user_id"
     t.string   "name"
     t.datetime "due_at"
-    t.boolean  "done"
+    t.boolean  "done",       :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

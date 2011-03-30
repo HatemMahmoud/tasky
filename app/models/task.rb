@@ -1,11 +1,12 @@
 class Task < ActiveRecord::Base
   belongs_to :user  
-  validates :name, :presence => true, :uniqueness => {:scope => :user_id}, :length => { :within => 3..250, :allow_blank => true }
+  validates :name, :presence => true, :length => { :within => 3..250, :allow_blank => true }
   
-  scope :overdue,  lambda { where("due_at < ? and done = ?", Date.today.midnight, false).order('due_at') }
-  scope :today,    lambda { where(:due_at => Date.today.midnight...Date.tomorrow.midnight).order('done, due_at') }
-  scope :tomorrow, lambda { where(:due_at => Date.tomorrow.midnight...(Date.tomorrow.midnight + 1.day)).order('done, due_at') }
-  scope :later,    lambda { where("due_at > ? and done = ?", Date.tomorrow.midnight + 1.day, false).order('due_at') }
-  scope :someday,  lambda { where(:due_at => nil, :done => false).order('name') }
-  scope :done, where(:done => true)
+  scope :done, where(:done => true).order('due_at, name')
+  scope :due, where(:done => false).order('due_at, name')
+  scope :overdue,  lambda { due.where("due_at < ?", Date.today.midnight) }
+  scope :today,    lambda { due.where(:due_at => Date.today.midnight...Date.tomorrow.midnight) }
+  scope :tomorrow, lambda { due.where(:due_at => Date.tomorrow.midnight...(Date.tomorrow.midnight + 1.day)) }
+  scope :later,    lambda { due.where("due_at > ?", Date.tomorrow.midnight) }
+  scope :someday,  lambda { due.where(:due_at => nil) }
 end
