@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.where(params[:id])
   end
 
   def create
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.where(params[:id])
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to tasks_path, :notice => 'Task was successfully updated.' }
@@ -41,7 +41,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.where(params[:id])
     @task.destroy
     respond_to do |format|
       format.html { redirect_to tasks_path }
