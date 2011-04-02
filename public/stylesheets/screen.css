@@ -42,9 +42,9 @@ h1, h2 {
   border-radius: 7px;
   -moz-border-radius: 7px; 
   -webkit-border-radius: 7px; 
-   box-shadow: 0px 1px 10px #CCC;
-  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 1px 10px #CCC;
+   box-shadow: 1px 1px 5px #CCC;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 5px #CCC;
 }
 header {
   display: block;
@@ -177,7 +177,7 @@ header {
     .notice, .alert {
       margin: 0 0 10px;
       padding: 10px;
-      border: 1px solid;
+      border: 2px solid;
       border-radius: 5px;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
@@ -193,7 +193,7 @@ header {
       border-color: #E88C8C;
     }
     .field_with_errors input, .field_with_errors textarea, .field_with_errors select {
-      border: 1px solid #CC0000;
+      border: 1px solid #E88C8C;
     }
     #error_explanation {
       background-color: #FFEBEB;
