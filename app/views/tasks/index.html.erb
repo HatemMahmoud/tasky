@@ -1,8 +1,8 @@
 <% @title = 'Tasks' %>
 <div id="add_task">
-  <%= form_for(@new_task) do |f| %>
+  <%= form_for(@task) do |f| %>
     <fieldset>
-      <%= f.label :name %>
+      <%= f.label :name, 'Task' %>
       <%= f.text_field :name, :required => true, :class => 'text_field' %>
     </fieldset>
     <fieldset>

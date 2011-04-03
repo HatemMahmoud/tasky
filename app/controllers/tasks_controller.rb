@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_filter :edit_due_at, :only => [:create, :update]
   
   def index
-    @new_task = current_user.tasks.new
+    @task = current_user.tasks.new
     tasks = current_user.tasks
     @overdue = tasks.overdue
     @today = tasks.today
