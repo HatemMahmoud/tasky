@@ -13,7 +13,7 @@
         <ul>
           <% if current_user %>
             <li>Welcome, <%= current_user.name %>!</li>
-            <li><%= link_to_unless_current("Tasks (#{current_user.tasks.done.size}/#{current_user.tasks.size})", tasks_path) {|name, link| link_to name, link, :class => 'active' } %></li>
+            <li><%= link_to_unless_current('Tasks', tasks_path) {|name, link| link_to name, link, :class => 'active' } %></li>
             <li><%= link_to "Logout", logout_path %></li>
           <% else %>
             <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>

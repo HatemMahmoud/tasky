@@ -1,15 +1,8 @@
 class TasksController < ApplicationController
+  before_filter :find_tasks, :only => [:index, :create]
   before_filter :edit_due_at, :only => [:create, :update]
   
   def index
-    @task = current_user.tasks.new
-    tasks = current_user.tasks
-    @overdue = tasks.overdue
-    @today = tasks.today
-    @tomorrow = tasks.tomorrow
-    @later = tasks.later
-    @someday = tasks.someday
-    @done = tasks.done
   end
 
   def new
@@ -25,8 +18,10 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.html { redirect_to tasks_path, :notice => 'Task was successfully created.' }
+        format.js
       else
         format.html { render :action => "new" }
+        format.js
       end
     end
   end
@@ -48,6 +43,17 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_path }
     end
+  end
+  
+  def find_tasks
+    @task = current_user.tasks.new
+    tasks = current_user.tasks
+    @overdue = tasks.overdue
+    @today = tasks.today
+    @tomorrow = tasks.tomorrow
+    @later = tasks.later
+    @someday = tasks.someday
+    @done = tasks.done
   end
   
   def edit_due_at     

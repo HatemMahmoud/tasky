@@ -1,0 +1,11 @@
+<% %w[overdue today tomorrow later someday done].each do |list_name| %>
+  <% @list = eval("@#{list_name}") %>
+  <% unless @list.empty? %>
+    <section id="<%= list_name %>">
+      <h1><%= "#{@list.size} #{list_name.capitalize}" %></h1>
+      <ul>
+        <%= render @list %>
+      </ul>
+    </section>
+  <% end %>
+<% end %>

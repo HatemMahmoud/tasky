@@ -1,6 +1,6 @@
 <% @title = 'Tasks' %>
 <div id="add_task">
-  <%= form_for(@task) do |f| %>
+  <%= form_for(@task, :remote => true) do |f| %>
     <fieldset>
       <%= f.label :name, 'Task' %>
       <%= f.text_field :name, :required => true, :class => 'text_field' %>
@@ -14,14 +14,6 @@
     </fieldset>
   <% end %>
 </div>
-<% %w[overdue today tomorrow later someday done].each do |list_name| %>
-  <% @list = eval("@#{list_name}") %>
-  <% unless @list.empty? %>
-    <section id="<%= list_name %>">
-      <h1><%= "#{@list.size} #{list_name.capitalize}" %></h1>
-      <ul>
-        <%= render @list %>
-      </ul>
-    </section>
-  <% end %>
-<% end %>
+<div id="tasks">
+  <%= render :partial => 'tasks' %>
+</div>
