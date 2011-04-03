@@ -54,20 +54,20 @@ class TasksController < ApplicationController
     due_at = params[:task][:due_at].capitalize
     case due_at
     when 'Today', 'Tod'
-      params[:task][:due_at] = Date.today.midnight
+      params[:task][:due_at] = Date.current.midnight
     when 'Tomorrow', 'Tom'
       params[:task][:due_at] = Date.tomorrow.midnight
     when "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
       task_wday = Date::DAYNAMES.index(due_at)
-      params[:task][:due_at] = Date.today.advance(:days => advance(task_wday))
+      params[:task][:due_at] = Date.current.advance(:days => advance(task_wday))
     when "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
       task_wday = Date::ABBR_DAYNAMES.index(due_at)
-      params[:task][:due_at] = Date.today.advance(:days => advance(task_wday))
+      params[:task][:due_at] = Date.current.advance(:days => advance(task_wday))
     end
   end
     
   def advance(wday)
-    current_wday = Date.today.wday
+    current_wday = Date.current.wday
     (wday - current_wday) > 0 ? (wday - current_wday) : (wday - current_wday + 8)
   end
 end
