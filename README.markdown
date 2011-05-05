@@ -16,6 +16,15 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - Everything you want
 - Nothing you don't!
 
+## Latest Features
+
+- HTML5 structures and input types
+- Rails 3.0.7
+- Omniauth
+- Ajax CRUD
+- Inplace editing
+- RSpec
+
 ## Features
 
 - User can view a home page with introduction to Tasky
