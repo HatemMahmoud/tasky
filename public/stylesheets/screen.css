@@ -107,6 +107,9 @@ header {
       padding: 0;
       border: none;
     }
+    input{
+      font: inherit;
+    }
     label{
       display: block;
       color: #999;
@@ -122,7 +125,7 @@ header {
           border: none;
         }
         #add_task #task_name{
-          width: 425px;
+          width: 424px;
           margin: 0 10px 0 0;
         }
         #add_task #task_due_at{
