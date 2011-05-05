@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_filter :find_tasks, :only => [:index, :create]
+  before_filter :find_tasks, :only => [:index, :create, :update]
   before_filter :edit_due_at, :only => [:create, :update]
   
   def index
@@ -31,8 +31,10 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to tasks_path, :notice => 'Task was successfully updated.' }
+        format.js
       else
         format.html { render :action => "edit" }
+        format.js
       end
     end
   end

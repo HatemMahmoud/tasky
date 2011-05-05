@@ -33,6 +33,7 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can list tasks categorized by due date (overdue, today, tomorrow, later, someday, done)
 - User can use easy datetime formats (tod, tom, sun, mon)
 - User can delete a task
+- User can edit a task's name and due at
 
 - User can mark a task as done
 - User can mark a done task as undone
@@ -42,7 +43,6 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can filter tasks by project
 - User can filter tasks by context
 - User can view done tasks
-- User can edit a task
 - User can move a task to a project
 - User can move a task to a context
 - User can order tasks
