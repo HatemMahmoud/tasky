@@ -7,7 +7,7 @@ $(document).keypress(function(e) {
 
 $(".editable").live("click", function() {
   $(this).hide();
-  $(this).siblings("form").css("display", "inline").children("#task_name")[0].focus();
+  $(this).siblings("form").css("display", "inline");
 });
 
 $(".toggle").live("click", function() {

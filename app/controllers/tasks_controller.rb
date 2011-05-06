@@ -56,6 +56,8 @@ class TasksController < ApplicationController
     @later = tasks.later
     @someday = tasks.someday
     @done = tasks.done
+    @project = current_user.projects.new
+    @projects = current_user.projects
   end
   
   def edit_due_at

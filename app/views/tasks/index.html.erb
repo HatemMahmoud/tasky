@@ -14,6 +14,20 @@
     </fieldset>
   <% end %>
 </div>
+<aside>
+  <section>
+    <h1>Projects</h1>
+    <div id="add_project">
+      <%= form_for(@project, :remote => true) do |f| %>
+        <%= f.text_field :name, :required => true, :class => 'text_field' %>
+        <%= f.submit 'Add' %>
+      <% end %>
+    </div>
+    <div id="projects">
+      <%= render :partial => 'projects/projects' %>
+    </div>
+  </section>
+</aside>
 <div id="tasks">
   <%= render :partial => 'tasks' %>
 </div>

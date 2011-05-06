@@ -38,8 +38,10 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can edit a task's name and due at
 - User can mark a task as done
 - User can mark a done task as undone
-
 - User can create/list/edit/delete projects
+
+- date instead of datetime calendar
+- auto focus() text input field after user cteates a task/project/context
 - User can create/list/edit/delete contexts
 - User can filter tasks by project
 - User can filter tasks by context
@@ -58,3 +60,8 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - Bowser extensions
 - Mobile view
 - Sync
+
+## Bugs
+
+- Opera doesn't display validation message if task name is blank
+- Safari and Chrome don't cancel editing when Esc is pressed

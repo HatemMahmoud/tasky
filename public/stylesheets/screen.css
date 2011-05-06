@@ -41,6 +41,7 @@ h1, h2 {
   width: 760px;
 }
 #content {
+  overflow: auto;
   padding: 10px;
   background-color: #FFFFFF;
   border-radius: 7px;
@@ -141,6 +142,22 @@ header {
         #add_task #task_submit{
           margin: 15px 0 0;
         }
+    #tasks{
+      float: left;
+      width: 490px;
+    }
+    aside{
+      float: right;
+      width: 230px;
+    }
+      #add_project{
+        padding: 4px 0 5px;
+         border-bottom: 1px solid #EEEEEE;
+      }
+      #add_project .text_field{
+        width: 170px;
+        margin: 0;
+      }
     section h1{
       font-size: 16px;
       margin: 20px 0 0;
@@ -191,8 +208,14 @@ header {
           border: none;
           display: inline;
         }
-        .editable_form, .editable_submit{
+        .editable_form{
           display: none;
+        }
+        .editable_project_name{
+          width: 145px;
+        }
+        .editable_task_name{
+          width: 245px;
         }
         .editable_task_due_at{
           width: 124px;
