@@ -25,6 +25,7 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - Inplace editing
 - One page app!
 - RSpec
+- Tested in Firefox, IE, Opera, Safari, Chrome
 
 ## Features
 

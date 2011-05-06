@@ -18,8 +18,8 @@
             </span>
             <%= form_for(task, :remote => true, :html => {:class => 'editable_form'}) do |f| %>
               <%= f.text_field :name, :required => true %>
-              <%= f.text_field :due_at, :value => if task.due_at then task.due_at.strftime '%Y-%m-%d %H:%M' end %>
-              <%= f.submit 'Save' %>
+              <%= f.text_field :due_at, :value => if task.due_at then task.due_at.strftime '%Y-%m-%d %H:%M' end, :class => 'editable_task_due_at' %>
+              <%= f.submit 'Save', :class => 'editable_submit' %>
             <% end %>
           <% end %>
         <% end %>

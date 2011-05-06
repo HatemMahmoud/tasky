@@ -191,8 +191,11 @@ header {
           border: none;
           display: inline;
         }
-        .editable_form{
+        .editable_form, .editable_submit{
           display: none;
+        }
+        .editable_task_due_at{
+          width: 124px;
         }
         time{
           color: #999999;
