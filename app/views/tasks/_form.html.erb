@@ -18,6 +18,10 @@
     <%= f.text_field :due_at, :class => 'text_field' %>
   </fieldset>
   <fieldset>
+    <%= f.label :project %>
+    <%= f.select :project_id, @projects.map { |project| [project.name, project.id] }, :include_blank => true %>
+  </fieldset>
+  <fieldset>
     <%= f.label :done %>
     <%= f.check_box :done %>
   </fieldset>

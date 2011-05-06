@@ -15,10 +15,11 @@
               <% if task.due_at %>
                 <time datetime="<%= task.due_at.strftime '%A %Y-%m-%d %H:%M' %>"><%= task.due_at.strftime '%Y-%m-%d' %></time>
               <% end %>
+              <%= link_to task.project.name, tasks_path(:project_id => task.project_id), :class => 'tag' if task.project %>
             </span>
             <%= form_for(task, :remote => true, :html => {:class => 'editable_form'}) do |f| %>
               <%= f.text_field :name, :required => true, :class => 'editable_task_name' %>
-              <%= f.text_field :due_at, :value => if task.due_at then task.due_at.strftime '%Y-%m-%d %H:%M' end, :class => 'editable_task_due_at' %>
+              <input type="date" id="task_due_at" name="task[due_at]" value="<%= task.due_at.strftime '%Y-%m-%d' if task.due_at %>" class="editable_task_due_at">
               <%= f.submit 'Save' %>
             <% end %>
           <% end %>

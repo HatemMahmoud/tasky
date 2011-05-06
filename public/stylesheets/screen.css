@@ -132,11 +132,15 @@ header {
           border: none;
         }
         #add_task #task_name{
-          width: 424px;
+          width: 393px;
           margin: 0 10px 0 0;
         }
         #add_task #task_due_at{
-          width: 200px;
+          width: 97px;
+          margin: 0 10px 0 0;
+        }
+        #add_task #task_project_id{
+          width: 124px;
           margin: 0 10px 0 0;
         }
         #add_task #task_submit{
@@ -215,14 +219,20 @@ header {
           width: 145px;
         }
         .editable_task_name{
-          width: 245px;
+          width: 270px;
         }
         .editable_task_due_at{
-          width: 124px;
+          width: 97px;
         }
         time{
           color: #999999;
           font-size: 10px;
+        }
+        .tag {
+          float:right;
+          background-color: #EEEEEE;
+          padding: 1px 3px;
+          margin:0 0 0 2px;
         }
             .delete{
               padding: 0;

@@ -7,7 +7,11 @@
     </fieldset>
     <fieldset>
       <%= f.label :due_at %>
-      <input type="datetime" id="task_due_at" name="task[due_at]" class="text_field">
+      <input type="date" id="task_due_at" name="task[due_at]" class="text_field">
+    </fieldset>
+    <fieldset>
+      <%= f.label :project %>
+      <%= f.select :project_id, @projects.map { |project| [project.name, project.id] }, :include_blank => true %>
     </fieldset>
     <fieldset>
       <%= f.submit 'Add' %>

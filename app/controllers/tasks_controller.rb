@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_filter :find_tasks, :only => [:index, :create, :update]
+  before_filter :find_tasks, :only => [:index, :new, :create, :edit, :update]
   before_filter :edit_due_at, :only => [:create, :update]
   
   def index
