@@ -16,7 +16,7 @@
             <li><%= link_to_unless_current('Tasks', tasks_path) {|name, link| link_to name, link, :class => 'active' } %></li>
             <li><%= link_to "Logout", logout_path %></li>
           <% else %>
-            <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>
+            <li><%= link_to image_tag('/images/login-with-twitter.png', :alt => 'Login with Twitter'), '/auth/twitter', :class => 'login' %></li>
           <% end %>
         </ul>
       </nav>
