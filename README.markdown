@@ -42,8 +42,8 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can create/list/edit/delete contexts
 - User can filter tasks by project
 - User can filter tasks by context
+- User can delete a task/project/context using Ajax
 - User can assign a task by tweeting it
-- User can view done tasks
 - User can move a task to a project
 - User can move a task to a context
 - User can login using Facebook and logout

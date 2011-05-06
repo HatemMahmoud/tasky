@@ -1,13 +1,13 @@
 $(document).keypress(function(e) {
   if (e.keyCode == 27) {  // esc 
     $(".editable_form").hide();
-    $(".editable").show(); 
+    $(".editable").css("display", "inline"); 
   }
 });
 
 $(".editable").live("click", function() {
   $(this).hide();
-  $(this).siblings("form").show().children("#task_name")[0].focus();
+  $(this).siblings("form").css("display", "inline").children("#task_name")[0].focus();
 });
 
 $(".toggle").live("click", function() {
