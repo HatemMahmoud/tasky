@@ -1,12 +1,15 @@
 $(document).keypress(function(e) {
-  // esc
-  if (e.keyCode == 27) { 
-    $('section form').css("display", "none");
-    $('.editable').css("display", "inline"); 
+  if (e.keyCode == 27) {  // esc 
+    $(".editable_form").hide();
+    $(".editable").show(); 
   }
 });
 
-$('.editable').live('click', function() {
-  $(this).css("display", "none");
-  $(this).siblings("form").css("display", "inline").children('#task_name')[0].focus();
+$(".editable").live("click", function() {
+  $(this).hide();
+  $(this).siblings("form").show().children("#task_name")[0].focus();
+});
+
+$(".toggle").live("click", function() {
+  $(this).closest("form").submit();
 });

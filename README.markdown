@@ -20,9 +20,10 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 
 - HTML5 structures and input types
 - Rails 3.0.7
-- Omniauth
+- Replaced Janrain with Omniauth
 - Ajax CRUD
 - Inplace editing
+- One page app!
 - RSpec
 
 ## Features
@@ -34,17 +35,18 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can use easy datetime formats (tod, tom, sun, mon)
 - User can delete a task
 - User can edit a task's name and due at
-
 - User can mark a task as done
 - User can mark a done task as undone
-- User can login using Facebook and logout
+
 - User can create/list/edit/delete projects
 - User can create/list/edit/delete contexts
 - User can filter tasks by project
 - User can filter tasks by context
+- User can assign a task by tweeting it
 - User can view done tasks
 - User can move a task to a project
 - User can move a task to a context
+- User can login using Facebook and logout
 - User can order tasks
 - User can order project
 - User can order context
@@ -52,4 +54,6 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can view performance charts
 - User can share tasks with fiends
 - User can list tasks in a grid
+- Bowser extensions
 - Mobile view
+- Sync

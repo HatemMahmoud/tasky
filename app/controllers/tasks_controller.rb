@@ -58,19 +58,21 @@ class TasksController < ApplicationController
     @done = tasks.done
   end
   
-  def edit_due_at     
-    due_at = params[:task][:due_at].capitalize
-    case due_at
-    when 'Today', 'Tod'
-      params[:task][:due_at] = Date.current.midnight
-    when 'Tomorrow', 'Tom'
-      params[:task][:due_at] = Date.tomorrow.midnight
-    when "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-      task_wday = Date::DAYNAMES.index(due_at)
-      params[:task][:due_at] = Date.current.advance(:days => advance(task_wday))
-    when "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
-      task_wday = Date::ABBR_DAYNAMES.index(due_at)
-      params[:task][:due_at] = Date.current.advance(:days => advance(task_wday))
+  def edit_due_at
+    if params[:task][:due_at]
+      due_at = params[:task][:due_at].capitalize
+      case due_at
+      when 'Today', 'Tod'
+        params[:task][:due_at] = Date.current.midnight
+      when 'Tomorrow', 'Tom'
+        params[:task][:due_at] = Date.tomorrow.midnight
+      when "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        task_wday = Date::DAYNAMES.index(due_at)
+        params[:task][:due_at] = Date.current.advance(:days => advance(task_wday))
+      when "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
+        task_wday = Date::ABBR_DAYNAMES.index(due_at)
+        params[:task][:due_at] = Date.current.advance(:days => advance(task_wday))
+      end
     end
   end
     

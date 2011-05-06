@@ -1,12 +1,15 @@
 <%= content_tag_for :li, task do %>
   <%= link_to image_tag('/images/delete.png'), task, :confirm => "Delete task '#{task.name}'?", :method => :delete, :class => 'delete' %>
+  <%= form_for(task, :remote => true) do |f| %>
+    <%= f.check_box :done, :class => 'toggle' %>
+  <% end %>
   <span class ="editable">
     <%= task.name %>
     <% if task.due_at %>
       <time datetime="<%= task.due_at.strftime '%A %Y-%m-%d %H:%M' %>"><%= task.due_at.strftime '%Y-%m-%d' %></time>
     <% end %>
   </span>
-  <%= form_for(task, :remote => true, :html => {:style => 'display:none;'}) do |f| %>
+  <%= form_for(task, :remote => true, :html => {:class => 'editable_form', :style => 'display:none;'}) do |f| %>
     <%= f.text_field :name, :required => true %>
     <%= f.text_field :due_at, :value => if task.due_at then task.due_at.strftime '%Y-%m-%d %H:%M' end %>
     <%= f.submit 'Save' %>

@@ -197,6 +197,7 @@ header {
         }
             .delete{
               padding: 0;
+              float: right;
             }
             .delete:hover{
               background: none;
