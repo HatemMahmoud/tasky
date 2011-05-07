@@ -15,9 +15,9 @@
               <% if task.due_at %>
                 <time datetime="<%= task.due_at.strftime '%A %Y-%m-%d %H:%M' %>"><%= task.due_at.strftime '%Y-%m-%d' %></time>
               <% end %>
-              <%= link_to task.project.name, tasks_path(:project_id => task.project_id), :class => 'tag' if task.project %>
-              <%= link_to "@#{task.context.name}", tasks_path(:context_id => task.context_id), :class => 'tag' if task.context %>
             </span>
+            <%= link_to task.project.name, tasks_path(:project_id => task.project_id), :class => 'tag' if task.project %>
+            <%= link_to "@#{task.context.name}", tasks_path(:context_id => task.context_id), :class => 'tag' if task.context %>
             <%= form_for(task, :remote => true, :html => {:class => 'editable_form'}) do |f| %>
               <%= f.text_field :name, :required => true, :title => 'Task', :class => 'editable_task_name' %>
               <input type="date" id="task_due_at" name="task[due_at]" title="Due at" value="<%= task.due_at.strftime '%Y-%m-%d' if task.due_at %>" class="editable_task_due_at">
