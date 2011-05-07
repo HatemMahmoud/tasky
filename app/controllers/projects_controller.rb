@@ -9,7 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @projects = current_user.projects
     @project = current_user.projects.new(params[:project])
     respond_to do |format|
       if @project.save
@@ -21,8 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @projects = current_user.projects
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
     respond_to do |format|
       if @project.update_attributes(params[:project])
         format.html { redirect_to tasks_path }
