@@ -22,14 +22,25 @@
   <section>
     <h1>Projects</h1>
     <div id="add_project">
-      <%= form_for(@project, :remote => true) do |f| %>
+      <%= form_for(@project) do |f| %>
         <%= f.text_field :name, :required => true, :class => 'text_field' %>
         <%= f.submit 'Add' %>
       <% end %>
     </div>
-    <div id="projects">
-      <%= render :partial => 'projects/projects' %>
-    </div>
+    <ul>
+      <% for project in @projects do %>
+        <%= content_tag_for :li, project do %>
+          <%= link_to image_tag('/images/delete.png'), project, :confirm => "Delete project '#{project.name}' with all tasks?", :method => :delete, :class => 'delete' %>
+          <span class ="editable">
+            <%= project.name %>
+          </span>
+          <%= form_for(project, :html => {:class => 'editable_form'}) do |f| %>
+            <%= f.text_field :name, :required => true, :class => 'editable_project_name' %>
+            <%= f.submit 'Save' %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
   </section>
 </aside>
 <div id="tasks">

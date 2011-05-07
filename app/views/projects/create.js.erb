@@ -1,6 +1,0 @@
-<% if @project.errors.any? %>
-  alert("<%= @project.errors.full_messages[0] %>");
-<% else %>
-  $("#projects").html("<%= escape_javascript( render :partial => 'projects' ) %>");
-  $("#new_project")[0].reset();
-<% end %>

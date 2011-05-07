@@ -22,6 +22,7 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - Rails 3.0.7
 - Replaced Janrain with Omniauth
 - Ajax CRUD
+- Support for non-JavaScript browsers
 - Inplace editing
 - special date formats
 - One page app!
@@ -40,9 +41,10 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can mark a task as done
 - User can mark a done task as undone
 - User can create/list/edit/delete projects
-
 - date instead of datetime calendar
-- a new project should be immediately available in new-task form
+
+- sort project list and select list alphabetically
+- move form errors to a partial
 - auto focus() text input field after user cteates a task/project/context
 - User can create/list/edit/delete contexts
 - User can filter tasks by project
@@ -65,6 +67,6 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 
 ## Bugs
 
-- changing a task's project doesn't update tasks_count
 - Opera doesn't display validation message if task name is blank
 - Safari and Chrome don't cancel editing when Esc is pressed
+- Slow/disabled connection gives: SocketError - getaddrinfo: No such host is known. 

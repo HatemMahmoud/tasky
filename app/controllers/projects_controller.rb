@@ -13,11 +13,9 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.new(params[:project])
     respond_to do |format|
       if @project.save
-        format.html { redirect_to tasks_path, :notice => 'Project was successfully created.' }
-        format.js
+        format.html { redirect_to tasks_path }
       else
         format.html { render :action => "new" }
-        format.js
       end
     end
   end
@@ -27,11 +25,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to tasks_path, :notice => 'Project was successfully updated.' }
-        format.js
+        format.html { redirect_to tasks_path }
       else
         format.html { render :action => "edit" }
-        format.js
       end
     end
   end
