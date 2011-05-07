@@ -42,8 +42,8 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can mark a done task as undone
 - User can create/list/edit/delete projects
 - date instead of datetime calendar
-
 - sort project list and select list alphabetically
+
 - move form errors to a partial
 - auto focus() text input field after user cteates a task/project/context
 - User can create/list/edit/delete contexts
