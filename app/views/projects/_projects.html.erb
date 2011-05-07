@@ -3,7 +3,7 @@
     <%= content_tag_for :li, project do %>
       <%= link_to image_tag('/images/delete.png'), project, :confirm => "Delete project '#{project.name}' with all tasks?", :method => :delete, :class => 'delete' %>
       <span class ="editable">
-        <%= project.name %> (<%= project.tasks_count %>)
+        <%= project.name %>
       </span>
       <%= form_for(project, :remote => true, :html => {:class => 'editable_form'}) do |f| %>
         <%= f.text_field :name, :required => true, :class => 'editable_project_name' %>

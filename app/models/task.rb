@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :user
-  belongs_to :project, :counter_cache => true
+  belongs_to :project
   validates :name, :presence => true, :uniqueness => {:scope => [:user_id, :due_at], :case_sensitive => false}, :length => { :within => 3..250, :allow_blank => true }
   
   scope :done, where(:done => true).order('due_at, name')

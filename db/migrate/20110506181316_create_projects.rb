@@ -3,7 +3,6 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.references :user
       t.string :name
-      t.integer :tasks_count, :default => 0
 
       t.timestamps
     end
