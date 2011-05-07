@@ -22,6 +22,10 @@
     <%= f.select :project_id, @projects.map { |project| [project.name, project.id] }, :include_blank => true %>
   </fieldset>
   <fieldset>
+    <%= f.label :context %>
+    <%= f.select :context_id, @contexts.map { |context| [context.name, context.id] }, :include_blank => true %>
+  </fieldset>
+  <fieldset>
     <%= f.label :done %>
     <%= f.check_box :done %>
   </fieldset>

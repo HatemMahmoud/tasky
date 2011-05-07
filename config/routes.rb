@@ -1,5 +1,5 @@
 Tasky::Application.routes.draw do
-  resources :tasks, :projects
+  resources :tasks, :projects, :contexts
   match '/auth/failure' => 'sessions#failure'
   match '/auth/:provider/callback' => 'sessions#create'
   match '/logout' => 'sessions#destroy', :as => :logout

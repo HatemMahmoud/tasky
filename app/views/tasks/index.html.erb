@@ -14,6 +14,10 @@
       <%= f.select :project_id, @projects.map { |project| [project.name, project.id] }, :include_blank => true %>
     </fieldset>
     <fieldset>
+      <%= f.label :context %>
+      <%= f.select :context_id, @contexts.map { |context| [context.name, context.id] }, :include_blank => true %>
+    </fieldset>
+    <fieldset>
       <%= f.submit 'Add' %>
     </fieldset>
   <% end %>
@@ -36,6 +40,29 @@
           </span>
           <%= form_for(project, :html => {:class => 'editable_form'}) do |f| %>
             <%= f.text_field :name, :required => true, :class => 'editable_project_name' %>
+            <%= f.submit 'Save' %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+  <section>
+    <h1>Contexts</h1>
+    <div id="add_context">
+      <%= form_for(@context) do |f| %>
+        <%= f.text_field :name, :required => true, :class => 'text_field' %>
+        <%= f.submit 'Add' %>
+      <% end %>
+    </div>
+    <ul>
+      <% for context in @contexts do %>
+        <%= content_tag_for :li, context do %>
+          <%= link_to image_tag('/images/delete.png'), context, :confirm => "Delete context '#{context.name}'?", :method => :delete, :class => 'delete' %>
+          <span class ="editable">
+            <%= "@#{context.name}" %>
+          </span>
+          <%= form_for(context, :html => {:class => 'editable_form'}) do |f| %>
+            <%= f.text_field :name, :required => true, :class => 'editable_context_name' %>
             <%= f.submit 'Save' %>
           <% end %>
         <% end %>

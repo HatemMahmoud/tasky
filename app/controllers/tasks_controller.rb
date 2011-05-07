@@ -58,6 +58,8 @@ class TasksController < ApplicationController
     @done = tasks.done
     @project = current_user.projects.new
     @projects = current_user.projects
+    @context = current_user.contexts.new
+    @contexts = current_user.contexts
   end
   
   def edit_due_at
