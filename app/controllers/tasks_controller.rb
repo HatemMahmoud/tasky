@@ -49,7 +49,13 @@ class TasksController < ApplicationController
   
   def find_tasks
     @task = current_user.tasks.new
-    tasks = current_user.tasks
+    if params[:project_id]
+      tasks = current_user.tasks.where(:project_id => params[:project_id])
+    elsif params[:context_id]
+      tasks = current_user.tasks.where(:context_id => params[:context_id])
+    else
+      tasks = current_user.tasks
+    end
     @overdue = tasks.overdue
     @today = tasks.today
     @tomorrow = tasks.tomorrow

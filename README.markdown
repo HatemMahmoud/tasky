@@ -44,19 +44,15 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - date instead of datetime calendar
 - sort project/context lists and select lists alphabetically
 - User can create/list/edit/delete contexts
+- User can filter tasks by clicking a project/context tag
 
 - move form errors to a partial
 - auto focus() text input field after user cteates a task/project/context
-- User can filter tasks by project
-- User can filter tasks by context
 - User can delete a task/project/context using Ajax
 - User can assign a task by tweeting it
 - User can move a task to a project
 - User can move a task to a context
 - User can login using Facebook and logout
-- User can order tasks
-- User can order project
-- User can order context
 - User can view help
 - User can view performance charts
 - User can share tasks with fiends
