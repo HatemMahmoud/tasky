@@ -7,10 +7,12 @@ $('.toggle').live('click', function() {
 });
 
 // start editing
-$('.editable').live('click', function() {
-  $(this).children().hide();
-  $(this).children('form').css('display', 'inline');
-  $(this).children('form').first().children('input').first().focus();
+$('.editable').live('click', function(event) {
+  if ($(event.target).is("li")){
+    $(this).children().hide();
+    $(this).children('form').css('display', 'inline');
+    $(this).children('form').children('input[required]').first().focus(); 
+  }
 });
 
 // cancel editing

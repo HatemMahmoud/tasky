@@ -67,7 +67,6 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 
 ## Bugs
 
-- clicking a project/context/tag shows the editable form before filtering tasks
 - Opera doesn't display validation message if task name is blank
 - Safari and Chrome don't cancel editing when Esc is pressed
 - Slow/disabled connection gives: SocketError - getaddrinfo: No such host is known. 
