@@ -46,6 +46,7 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can create/list/edit/delete contexts
 - User can filter tasks by clicking a project/context tag
 - User can filter tasks by clicking a project/context name
+- User can click any item to edit
 
 - move form errors to a partial
 - auto focus() text input field after user cteates a task/project/context

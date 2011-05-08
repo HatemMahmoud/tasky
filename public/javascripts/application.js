@@ -1,19 +1,19 @@
+// check/uncheck
+$('.toggle').live('click', function() {
+  $(this).closest('form').submit();
+});
+
+// start editing
+$('.editable').live('click', function() {
+  $(this).children().hide();
+  $(this).children('form').css('display', 'inline');
+  $(this).children('form').first().children('input').first().focus();
+});
+
+// cancel editing
 $(document).keypress(function(e) {
   if (e.keyCode == 27) {  // esc
-    $(".editable_form").hide();
-    $(".editable").css("display", "inline");
-    $(".tag").show(); 
-    $(".delete").show(); 
+    $('.editable').children().show();
+    $('.editable_form').hide();
   }
-});
-
-$(".editable").live("click", function() {
-  $(this).hide();
-  $(this).siblings(".tag").hide();
-  $(this).siblings(".delete").hide();
-  $(this).siblings("form").css("display", "inline");
-});
-
-$(".toggle").live("click", function() {
-  $(this).closest("form").submit();
 });
