@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: #666;
+  color: #333;
   font-size: 13px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   background-color: #F7F7F7;
@@ -28,6 +28,7 @@ h1, h2 {
   font-family: "Trebuchet MS";
 }
     h1{
+      color: #000;
       font-size: 20px;
       margin: 0 0 10px;
     }
@@ -88,22 +89,23 @@ header {
               border: none;
             }
     hgroup h1{
-      color: #000000;
       float: none;
       font-size: 34px;
       margin: 200px 0 10px;
       text-align: center;
     }
     hgroup h2{
-      font-size: 22px;
+      color: #666;
+      font-size: 25px;
+      font-weight: normal;
+      text-align: center;
       margin: 0 0 200px;
       padding: 0;
-      text-align: center;
     }
     form{
       overflow: auto;
       padding: 20px 10px;
-      background-color: #F9F9F9;
+      background-color: #F8F8F8;
       border: 2px solid #CCC;
       border-radius: 5px;
       -moz-border-radius: 5px;
@@ -116,7 +118,8 @@ header {
     }
     label{
       display: block;
-      color: #999;
+      color: #777;
+      margin: 0 0 3px;
     }
     input, select{
       font: inherit;
@@ -147,27 +150,43 @@ header {
           margin: 0 10px 0 0;
         }
         #add_task #task_submit{
-          margin: 15px 0 0;
+          margin: 18px 0 0;
         }
     #tasks{
       float: left;
-      width: 490px;
+      width: 500px;
     }
     aside{
       float: right;
       width: 230px;
     }
+      aside section{
+        margin: 10px 0 0;
+        padding: 0 10px;
+        background-color: #F8F8F8;
+        border: 2px solid #CCC;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+      }
+      aside section h1{
+        margin: 10px 0 0;
+      }
       #add_project, #add_context{
         padding: 4px 0 5px;
          border-bottom: 1px solid #EEEEEE;
       }
-      #add_project .text_field, #add_context .text_field{
-        width: 170px;
+      aside .text_field{
+        width: 146px;
         margin: 0;
+      }
+      .editable_project_name, .editable_context_name{
+        width: 136px;
       }
     section h1{
       font-size: 16px;
       margin: 20px 0 0;
+      padding: 0 0 5px;
       border-bottom: 1px solid #CCCCCC;
     }
     #overdue h1{
@@ -177,7 +196,7 @@ header {
       color:#57861A;
     }
     #tomorrow h1{
-      color:#000;
+      color:#333;
     }
     #later h1{
       color:#666;
@@ -189,6 +208,7 @@ header {
       color:#ccc;
     }
         #done li{
+          color:#999;
           text-decoration: line-through;
         }
     section ul{
@@ -198,7 +218,10 @@ header {
     }
         section li {
           border-bottom: 1px solid #EEEEEE;
-          padding: 4px 0 5px;
+          padding: 4px 3px 5px 0;
+        }
+        section li:hover {
+          background-color: #F6F6F6;
         }
         section form{
           overflow: auto;
@@ -211,11 +234,8 @@ header {
         .editable_form{
           display: none;
         }
-        .editable_project_name, .editable_context_name{
-          width: 145px;
-        }
         .editable_task_name{
-          width: 270px;
+          width: 298px;
         }
         .editable_task_due_at{
           width: 97px;
@@ -228,14 +248,19 @@ header {
           font-size: 10px;
           padding: 0 3px 2px;
         }
-            .delete{
-              padding: 0;
-              float: right;
-            }
+        li:hover .delete{
+          visibility: visible;
+        }
+        .delete{
+          padding: 0;
+          float: right;
+          visibility: hidden;
+        }
             .delete:hover{
               background: none;
             }
             .delete img{
+              vertical-align: middle;
               opacity: 0.5;
               -moz-opacity: 0.5;
               filter:alpha(opacity=50);

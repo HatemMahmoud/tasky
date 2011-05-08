@@ -3,12 +3,14 @@ $(document).keypress(function(e) {
     $(".editable_form").hide();
     $(".editable").css("display", "inline");
     $(".tag").show(); 
+    $(".delete").show(); 
   }
 });
 
 $(".editable").live("click", function() {
   $(this).hide();
   $(this).siblings(".tag").hide();
+  $(this).siblings(".delete").hide();
   $(this).siblings("form").css("display", "inline");
 });
 
