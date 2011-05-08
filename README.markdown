@@ -51,11 +51,13 @@ Tasky is the easiest way to [Get Things Done](http://en.wikipedia.org/wiki/Getti
 - User can click any item to edit
 - auto focus() text input field after user cteates a task/project/context
 
+- User can move a task to a project
+- User can move a task to a context
+- Recurrent tasks
+- User can use a popup to add a project/context
 - move form errors to a partial
 - User can delete a task/project/context using Ajax
 - User can assign a task by tweeting it
-- User can move a task to a project
-- User can move a task to a context
 - User can login using Facebook and logout
 - User can view help
 - User can view performance charts
