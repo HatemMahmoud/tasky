@@ -1,6 +1,7 @@
 <% if @task.errors.any? %>
   alert("<%= @task.errors.full_messages[0] %>");
 <% else %>
-  $("#tasks").html("<%= escape_javascript( render :partial => 'tasks' ) %>");
-  $("#new_task")[0].reset();
+  $('#tasks').html("<%= escape_javascript( render :partial => 'tasks' ) %>");
+  $('#new_task')[0].reset();
+  $('#new_task #task_name').focus();
 <% end %>

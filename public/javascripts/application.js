@@ -1,3 +1,6 @@
+// always set focus on new task name
+$('#add_task #task_name').focus();
+
 // check/uncheck
 $('.toggle').live('click', function() {
   $(this).closest('form').submit();
