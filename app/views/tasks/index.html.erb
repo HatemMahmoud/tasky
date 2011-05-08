@@ -23,7 +23,7 @@
   <% end %>
 </div>
 <aside>
-  <section>
+  <section id="projects">
     <h1>Projects</h1>
     <div id="add_project">
       <%= form_for(@project) do |f| %>
@@ -35,8 +35,8 @@
       <% for project in @projects do %>
         <%= content_tag_for :li, project do %>
           <%= link_to image_tag('/images/delete.png'), project, :confirm => "Delete project '#{project.name}' with all tasks?", :method => :delete, :class => 'delete' %>
-          <span class ="editable">
-            <%= project.name %>
+          <span class="editable">
+            <%= link_to_unless_current(project.name, tasks_path(:project_id => project)) {|name, link| link_to name, link, :class => 'active' } %>
           </span>
           <%= form_for(project, :html => {:class => 'editable_form'}) do |f| %>
             <%= f.text_field :name, :required => true, :class => 'editable_project_name' %>
@@ -58,8 +58,8 @@
       <% for context in @contexts do %>
         <%= content_tag_for :li, context do %>
           <%= link_to image_tag('/images/delete.png'), context, :confirm => "Delete context '#{context.name}'?", :method => :delete, :class => 'delete' %>
-          <span class ="editable">
-            <%= "@#{context.name}" %>
+          <span class="editable">
+            <%= link_to_unless_current("@#{context.name}", tasks_path(:context_id => context)) {|name, link| link_to name, link, :class => 'active' } %>
           </span>
           <%= form_for(context, :html => {:class => 'editable_form'}) do |f| %>
             <%= f.text_field :name, :required => true, :class => 'editable_context_name' %>
